@@ -1,0 +1,3873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chan Zuckerberg Biohub - Media Coverage Analysis | Newswise</title>
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- CSS STYLES --- */
+        /* CSS Variables - Elegant Dark Theme */
+        :root {
+            --primary-red: #dc2626;
+            --primary-red-dark: #991b1b;
+            --primary-red-light: #ef4444;
+            --accent-red: #f87171;
+            --accent-gold: #fbbf24;
+            --pure-black: #000000;
+            --dark-bg: #0c0c0c;
+            --darker-bg: #080808;
+            --card-bg: rgba(20, 20, 20, 0.9);
+            --card-bg-solid: #141414;
+            --card-bg-hover: #1a1a1a;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --border-dark: rgba(255, 255, 255, 0.06);
+            --border-light: rgba(255, 255, 255, 0.12);
+            --pure-white: #ffffff;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a3a3a3;
+            --text-muted: #525252;
+            --highlight-color: #dc2626;
+            --success-green: #22c55e;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --glow-red: rgba(220, 38, 38, 0.4);
+            --glow-white: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Light Mode Variables */
+        body.light-mode {
+            --pure-black: #ffffff;
+            --dark-bg: #fafbfc;
+            --darker-bg: #f5f7fa;
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --card-bg-solid: #ffffff;
+            --card-bg-hover: #fafbfc;
+            --glass-bg: rgba(0, 0, 0, 0.02);
+            --glass-border: rgba(0, 0, 0, 0.06);
+            --border-dark: rgba(0, 0, 0, 0.05);
+            --border-light: rgba(0, 0, 0, 0.1);
+            --pure-white: #1e293b;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --shadow-color: rgba(0, 0, 0, 0.06);
+            --glow-red: rgba(220, 38, 38, 0.15);
+            --glow-white: rgba(0, 0, 0, 0.03);
+        }
+
+        body.light-mode {
+            background: linear-gradient(180deg, #ffffff 0%, #fafbfc 50%, #f5f7fa 100%);
+            color: var(--text-primary);
+        }
+
+        body.light-mode::before {
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(220, 38, 38, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 0% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+        }
+
+        body.light-mode .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        body.light-mode .header-title h1 {
+            color: #1e293b;
+            text-shadow: none;
+        }
+
+        body.light-mode .header-title p {
+            color: #64748b;
+        }
+
+        body.light-mode .report-date {
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            color: #64748b;
+        }
+
+        body.light-mode .metric-card,
+        body.light-mode .chart-card,
+        body.light-mode .timeline-content,
+        body.light-mode .insight-card,
+        body.light-mode .opportunity-card,
+        body.light-mode .comparison-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+
+        body.light-mode .metric-card:hover,
+        body.light-mode .chart-card:hover,
+        body.light-mode .insight-card:hover,
+        body.light-mode .opportunity-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 16px 48px rgba(0, 0, 0, 0.06);
+            border-color: rgba(220, 38, 38, 0.2);
+        }
+
+        body.light-mode .metric-card.highlight {
+            background: linear-gradient(145deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            border: none;
+        }
+
+        body.light-mode .metric-card .metric-label,
+        body.light-mode .metric-card .metric-detail {
+            color: #475569;
+        }
+
+        body.light-mode .metric-card.highlight .metric-label,
+        body.light-mode .metric-card.highlight .metric-detail {
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        body.light-mode .section-title {
+            color: #1e293b;
+        }
+
+        body.light-mode .section-title::after {
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.3);
+        }
+
+        body.light-mode .hero {
+            background: linear-gradient(135deg, #1e293b 0%, var(--primary-red-dark) 50%, #1e293b 100%);
+        }
+
+        body.light-mode .performance-section,
+        body.light-mode .growth-section,
+        body.light-mode .comparison-section {
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        body.light-mode .performance-section::before,
+        body.light-mode .growth-section::before,
+        body.light-mode .comparison-section::before {
+            background: linear-gradient(90deg, transparent 10%, rgba(0, 0, 0, 0.06) 50%, transparent 90%);
+        }
+
+        body.light-mode .chart-card h3 {
+            color: #1e293b;
+        }
+
+        body.light-mode .chart-wrapper {
+            background: #fafbfc;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        body.light-mode .footer {
+            background: #1e293b;
+        }
+
+        body.light-mode .insight-highlight {
+            background: #ffffff;
+            border: 2px solid var(--primary-red);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.1);
+        }
+
+        body.light-mode .insight-highlight h4 {
+            color: #1e293b;
+        }
+
+        body.light-mode .insight-highlight p {
+            color: #475569;
+        }
+
+        body.light-mode .timeline-date .month {
+            color: var(--primary-red);
+        }
+
+        body.light-mode .timeline-date .year {
+            color: #64748b;
+        }
+
+        body.light-mode .timeline-content h3 {
+            color: #1e293b;
+        }
+
+        body.light-mode .timeline-desc {
+            color: #64748b;
+        }
+
+        body.light-mode .timeline-stats .stat {
+            color: #475569;
+        }
+
+        body.light-mode .timeline-item::before {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.06) 100%);
+        }
+
+        body.light-mode .timeline-track {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.06) 100%);
+        }
+
+        body.light-mode .insight-card h4 {
+            color: #1e293b;
+        }
+
+        body.light-mode .insight-card p {
+            color: #64748b;
+        }
+
+        body.light-mode .opportunity-card h3 {
+            color: #1e293b;
+        }
+
+        body.light-mode .opportunity-card p,
+        body.light-mode .opportunity-card li {
+            color: #64748b;
+        }
+
+        body.light-mode .opportunity-intro p,
+        body.light-mode .comparison-intro p {
+            color: #64748b;
+        }
+
+        body.light-mode .comparison-card h3 {
+            color: #1e293b;
+        }
+
+        body.light-mode .time-detail {
+            color: #64748b;
+        }
+
+        body.light-mode .comp-label {
+            color: #64748b;
+        }
+
+        body.light-mode .comparison-arrow p {
+            color: #64748b;
+        }
+
+        body.light-mode .usage-note {
+            background: linear-gradient(145deg, rgba(220, 38, 38, 0.08) 0%, rgba(220, 38, 38, 0.04) 100%);
+        }
+
+        body.light-mode .usage-note.success {
+            background: linear-gradient(145deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.04) 100%);
+        }
+
+        body.light-mode .media-label {
+            color: #94a3b8;
+        }
+
+        body.light-mode .cta-section {
+            background: linear-gradient(145deg, var(--primary-red-dark) 0%, var(--primary-red) 50%, var(--primary-red-dark) 100%);
+        }
+
+        body.light-mode .insight-highlight p {
+            color: #4b5563;
+        }
+
+        /* Light mode logo visibility - invert to dark version */
+        body.light-mode .logo-section img,
+        body.light-mode .header .logo-section img {
+            filter: invert(1) hue-rotate(180deg) brightness(0.3) contrast(1.2);
+        }
+
+        body.light-mode .footer-left img {
+            filter: none;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #0c0c0c 0%, #0a0a0a 50%, #080808 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 0% 80%, rgba(220, 38, 38, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0.98) 0%, rgba(12, 12, 12, 0.95) 100%);
+            color: white;
+            padding: 1.75rem 2.5rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.4),
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .logo-section img {
+            height: 48px;
+            object-fit: contain;
+            filter: brightness(1.1);
+        }
+
+        .header-title {
+            text-align: center;
+            flex: 1;
+        }
+
+        .header-title h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--pure-white);
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .header-title p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-top: 0.25rem;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .header-right img {
+            height: 52px;
+            object-fit: contain;
+            /* Make Biohub logo white/light in dark mode */
+            filter: brightness(0) invert(1);
+        }
+
+        /* In light mode, show original Biohub logo colors */
+        body.light-mode .header-right img {
+            filter: none;
+        }
+
+        .header-right .logo-caption,
+        .logo-section .logo-caption {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0.98) 0%, rgba(12, 12, 12, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        body.light-mode .nav-menu {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-brand span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        body.light-mode .nav-brand span {
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        body.light-mode .nav-links a {
+            color: #4b5563;
+        }
+
+        body.light-mode .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Theme Toggle - Updated Design */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 30px;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+
+        .toggle-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0F172A;
+            /* Dark mode track */
+            border-radius: 30px;
+            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .toggle-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .toggle-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Default Dark Mode Track Icons */
+        .sun-icon {
+            color: #64748B;
+            /* Dimmed Sun on track */
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .moon-icon {
+            color: #64748B;
+            opacity: 0;
+            /* Hidden under knob initially */
+            transform: scale(0.5);
+        }
+
+        .toggle-knob {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background-color: #1E293B;
+            /* Dark mode knob */
+            border-radius: 50%;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            transform: translateX(30px);
+            /* Start at right for dark mode */
+        }
+
+        .knob-icon {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .knob-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Default Dark Mode Knob Icons */
+        .sun-knob-icon {
+            opacity: 0;
+            transform: scale(0.5) rotate(-90deg);
+            color: #0F172A;
+        }
+
+        .moon-knob-icon {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+            color: #F8FAFC;
+            /* White Moon in knob */
+        }
+
+        /* LIGHT MODE STATES */
+        body.light-mode .toggle-track {
+            background-color: #F1F5F9;
+            /* Light mode track */
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        body.light-mode .toggle-knob {
+            transform: translateX(0);
+            /* Move to left */
+            background-color: #FFFFFF;
+            /* Light mode knob */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Light Mode Track Icons */
+        body.light-mode .sun-icon {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        body.light-mode .moon-icon {
+            opacity: 1;
+            transform: scale(1);
+            color: #94A3B8;
+            /* Visible Moon on track */
+        }
+
+        /* Light Mode Knob Icons */
+        body.light-mode .sun-knob-icon {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+            color: #1E293B;
+            /* Dark Sun in knob */
+        }
+
+        body.light-mode .moon-knob-icon {
+            opacity: 0;
+            transform: scale(0.5) rotate(90deg);
+            color: #94A3B8;
+        }
+
+        /* Hover Effects */
+        .theme-toggle:hover .toggle-knob {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .theme-toggle:hover .toggle-knob {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .mobile-menu-btn span {
+            background: #1a1a1a;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 2000;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-red), var(--accent-red));
+            width: 0%;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+        }
+
+        /* Adjust header for fixed nav */
+        .header {
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(180deg, rgba(20, 20, 20, 0.98) 0%, rgba(12, 12, 12, 0.95) 100%);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--glass-border);
+            }
+
+            body.light-mode .nav-links {
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-brand span {
+                display: none;
+            }
+        }
+
+        .report-date {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.75rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--glass-bg);
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            display: inline-block;
+        }
+
+        .report-date strong {
+            color: var(--primary-red-light);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #141414 0%, var(--primary-red-dark) 50%, #0c0c0c 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(220, 38, 38, 0.2) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.85;
+            max-width: 650px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.25rem;
+            color: var(--pure-white);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-red), var(--primary-red-light), var(--primary-red), transparent);
+            border-radius: 2px;
+            box-shadow: 0 0 20px var(--glow-red);
+        }
+
+        /* 3D Card Mixin */
+        .card-3d {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9) 0%, rgba(15, 15, 15, 0.95) 100%);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.6),
+                0 12px 24px -8px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        .card-3d:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow:
+                0 35px 60px -15px rgba(0, 0, 0, 0.7),
+                0 20px 40px -10px rgba(220, 38, 38, 0.2),
+                0 0 0 1px rgba(220, 38, 38, 0.2) inset,
+                0 1px 0 rgba(255, 255, 255, 0.1) inset;
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        /* Metrics Section */
+        .metrics-section {
+            position: relative;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .metric-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9) 0%, rgba(15, 15, 15, 0.95) 100%);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 12px 24px -8px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+        }
+
+        .metric-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(220, 38, 38, 0.08) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-12px) rotateX(5deg);
+            box-shadow:
+                0 40px 70px -15px rgba(0, 0, 0, 0.6),
+                0 25px 50px -10px rgba(220, 38, 38, 0.15),
+                0 0 60px -10px rgba(220, 38, 38, 0.2);
+            border-color: rgba(220, 38, 38, 0.4);
+        }
+
+        .metric-card:hover::after {
+            opacity: 1;
+        }
+
+        .metric-card.highlight {
+            background: linear-gradient(145deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            border: none;
+            box-shadow:
+                0 25px 50px -12px rgba(220, 38, 38, 0.4),
+                0 12px 24px -8px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 -3px 0 rgba(0, 0, 0, 0.2) inset;
+        }
+
+        .metric-card.highlight::before {
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+        }
+
+        .metric-card.highlight:hover {
+            transform: translateY(-12px) rotateX(5deg);
+            box-shadow:
+                0 40px 70px -15px rgba(220, 38, 38, 0.5),
+                0 25px 50px -10px rgba(220, 38, 38, 0.3),
+                0 0 80px -10px rgba(220, 38, 38, 0.4);
+        }
+
+        .metric-icon {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .metric-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            line-height: 1;
+            text-shadow: 0 2px 20px rgba(220, 38, 38, 0.3);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .metric-card:nth-child(1) .metric-value {
+            color: #3b82f6;
+            text-shadow: 0 2px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .metric-card:nth-child(2) .metric-value {
+            color: #8b5cf6;
+            text-shadow: 0 2px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .metric-card:nth-child(3) .metric-value {
+            color: #14b8a6;
+            text-shadow: 0 2px 20px rgba(20, 184, 166, 0.4);
+        }
+
+        .metric-card:nth-child(4) .metric-value {
+            color: #f97316;
+            text-shadow: 0 2px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .metric-card.highlight .metric-value {
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-label {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .metric-card.highlight .metric-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .metric-detail {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.35rem;
+            font-weight: 400;
+        }
+
+        .metric-card.highlight .metric-detail {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* Performance Section */
+        .performance-section {
+            position: relative;
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            z-index: 1;
+        }
+
+        .performance-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 10%, var(--glass-border) 50%, transparent 90%);
+        }
+
+        .charts-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+            perspective: 1000px;
+        }
+
+        .chart-card {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 15px 30px -10px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .chart-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 50%, transparent 100%);
+        }
+
+        .chart-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            right: 20%;
+            height: 60%;
+            background: radial-gradient(ellipse at bottom, rgba(220, 38, 38, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .chart-card:hover {
+            transform: translateY(-8px) rotateX(2deg);
+            box-shadow:
+                0 40px 80px -20px rgba(0, 0, 0, 0.6),
+                0 25px 50px -15px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.25);
+        }
+
+        .chart-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.01em;
+        }
+
+        .chart-card.wide {
+            grid-column: 1 / -1;
+        }
+
+        /* Chart Container Styling */
+        .chart-wrapper {
+            position: relative;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow:
+                inset 0 2px 10px rgba(0, 0, 0, 0.3),
+                0 1px 0 rgba(255, 255, 255, 0.03);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            position: relative;
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .timeline {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2.5rem;
+            position: relative;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-item::before {
+            display: none;
+        }
+
+        .timeline-track,
+        .timeline-progress {
+            position: absolute;
+            left: 140px;
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .timeline-track {
+            background: linear-gradient(180deg, var(--border-dark) 0%, var(--border-light) 50%, var(--border-dark) 100%);
+        }
+
+        .timeline-progress {
+            background: var(--primary-red);
+            bottom: auto;
+            height: 0;
+            box-shadow: 0 0 15px var(--glow-red);
+            transition: height 0.1s linear;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 120px;
+            top: 3rem;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(145deg, var(--primary-red-light) 0%, var(--primary-red) 100%);
+            border-radius: 50%;
+            margin-left: calc(1.25rem - 7px);
+            box-shadow:
+                0 0 0 4px var(--dark-bg),
+                0 0 0 6px var(--primary-red),
+                0 0 20px rgba(220, 38, 38, 0.5);
+            z-index: 1;
+        }
+
+        .timeline-item.highlight-item::after {
+            background: linear-gradient(145deg, #ffffff 0%, #e0e0e0 100%);
+            box-shadow:
+                0 0 0 4px var(--dark-bg),
+                0 0 0 6px var(--pure-white),
+                0 0 25px rgba(255, 255, 255, 0.4);
+        }
+
+        .timeline-date {
+            text-align: right;
+            padding-right: 1.25rem;
+        }
+
+        .timeline-date .month {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px var(--glow-red);
+        }
+
+        .timeline-item.highlight-item .timeline-date .month {
+            color: var(--pure-white);
+            text-shadow: 0 0 20px var(--glow-white);
+        }
+
+        .timeline-date .year {
+            display: block;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .timeline-content {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 20px;
+            padding: 2rem 2.25rem;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 20px 40px -10px rgba(0, 0, 0, 0.4),
+                0 10px 20px -5px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            margin-left: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        .timeline-content:hover {
+            transform: translateX(8px);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 15px 30px -10px rgba(220, 38, 38, 0.1);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .timeline-item.highlight-item .timeline-content {
+            border-left: 4px solid var(--primary-red);
+            box-shadow:
+                0 20px 40px -10px rgba(0, 0, 0, 0.4),
+                0 10px 20px -5px rgba(220, 38, 38, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .timeline-stats .stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.08) 100%);
+            padding: 0.6rem 1.15rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-stats .stat:nth-child(1) {
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.08) 100%);
+            border-color: rgba(59, 130, 246, 0.25);
+        }
+
+        .timeline-stats .stat:nth-child(1) strong {
+            color: #60a5fa;
+        }
+
+        .timeline-stats .stat:nth-child(2) {
+            background: linear-gradient(145deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.08) 100%);
+            border-color: rgba(139, 92, 246, 0.25);
+        }
+
+        .timeline-stats .stat:nth-child(2) strong {
+            color: #a78bfa;
+        }
+
+        .timeline-stats .stat:nth-child(3) {
+            background: linear-gradient(145deg, rgba(20, 184, 166, 0.15) 0%, rgba(20, 184, 166, 0.08) 100%);
+            border-color: rgba(20, 184, 166, 0.25);
+        }
+
+        .timeline-stats .stat:nth-child(3) strong {
+            color: #2dd4bf;
+        }
+
+        .timeline-stats .stat strong {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .timeline-item.highlight-item .timeline-stats .stat strong {
+            color: var(--pure-white);
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Media Access Tags */
+        .media-access {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .media-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .media-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .media-tag {
+            display: inline-block;
+            padding: 0.45rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.3),
+                0 2px 4px rgba(0, 0, 0, 0.2),
+                0 1px 0 rgba(255, 255, 255, 0.1) inset;
+        }
+
+        .media-tag:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.4),
+                0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .media-tag.red {
+            background: linear-gradient(145deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .media-tag.dark-red {
+            background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .media-tag.white {
+            background: linear-gradient(145deg, #14b8a6 0%, #0d9488 100%);
+        }
+
+        .media-tag.gray {
+            background: linear-gradient(145deg, #f97316 0%, #ea580c 100%);
+        }
+
+        .media-tag.light-gray {
+            background: linear-gradient(145deg, #ec4899 0%, #db2777 100%);
+        }
+
+        .media-tag.black {
+            background: linear-gradient(145deg, #06b6d4 0%, #0891b2 100%);
+        }
+
+        /* Growth Section */
+        .growth-section {
+            position: relative;
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            z-index: 1;
+        }
+
+        .growth-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 10%, var(--glass-border) 50%, transparent 90%);
+        }
+
+        .growth-container {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .growth-insights {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .insight-card {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 20px;
+            padding: 2.25rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 20px 40px -10px rgba(0, 0, 0, 0.4),
+                0 10px 20px -5px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 20px 40px -10px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .insight-card:nth-child(1):hover {
+            border-color: rgba(236, 72, 153, 0.5);
+        }
+
+        .insight-card:nth-child(2):hover {
+            border-color: rgba(34, 197, 94, 0.5);
+        }
+
+        .insight-card:nth-child(3):hover {
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .insight-icon {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+            display: inline-block;
+        }
+
+        .insight-card:nth-child(1) .insight-icon {
+            filter: drop-shadow(0 4px 12px rgba(236, 72, 153, 0.4));
+        }
+
+        .insight-card:nth-child(2) .insight-icon {
+            filter: drop-shadow(0 4px 12px rgba(34, 197, 94, 0.4));
+        }
+
+        .insight-card:nth-child(3) .insight-icon {
+            filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
+        }
+
+        .insight-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .insight-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Opportunity Section */
+        .opportunity-section {
+            position: relative;
+            padding: 5rem 2rem;
+            z-index: 1;
+        }
+
+        .opportunity-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .opportunity-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .opportunity-card {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 20px;
+            padding: 2.25rem;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 12px 24px -8px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-10px) rotateX(3deg);
+            box-shadow:
+                0 35px 70px -15px rgba(0, 0, 0, 0.6),
+                0 20px 40px -10px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .opportunity-card.highlight-opp {
+            background: linear-gradient(145deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            border: none;
+            box-shadow:
+                0 25px 50px -12px rgba(220, 38, 38, 0.4),
+                0 12px 24px -8px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                0 -3px 0 rgba(0, 0, 0, 0.15) inset;
+        }
+
+        .opportunity-card.highlight-opp::before {
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+        }
+
+        .opportunity-card.highlight-opp:hover {
+            box-shadow:
+                0 40px 80px -15px rgba(220, 38, 38, 0.5),
+                0 25px 50px -10px rgba(220, 38, 38, 0.3),
+                0 0 100px -20px rgba(220, 38, 38, 0.4);
+        }
+
+        .opp-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .opp-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.05em;
+        }
+
+        .opportunity-card:nth-child(1) .opp-number {
+            color: #3b82f6;
+        }
+
+        .opportunity-card:nth-child(2) .opp-number {
+            color: #8b5cf6;
+        }
+
+        .opportunity-card:nth-child(3) .opp-number {
+            color: #14b8a6;
+        }
+
+        .opportunity-card:nth-child(4) .opp-number {
+            color: #f97316;
+        }
+
+        .highlight-opp .opp-number {
+            color: white;
+            opacity: 0.4;
+        }
+
+        .opportunity-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            letter-spacing: -0.01em;
+        }
+
+        .highlight-opp h3 {
+            color: white;
+        }
+
+        .opportunity-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .highlight-opp p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .opportunity-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .opportunity-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .highlight-opp li {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .opportunity-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: bold;
+            text-shadow: 0 0 10px var(--glow-red);
+        }
+
+        .highlight-opp li::before {
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            position: relative;
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            z-index: 1;
+        }
+
+        .comparison-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 10%, var(--glass-border) 50%, transparent 90%);
+        }
+
+        .comparison-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .comparison-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            perspective: 1000px;
+        }
+
+        .comparison-card {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 24px;
+            padding: 2.5rem;
+            min-width: 320px;
+            flex: 1;
+            max-width: 380px;
+            border: 2px solid var(--glass-border);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 15px 30px -10px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-8px) rotateX(3deg);
+        }
+
+        .comparison-card.current {
+            border-color: var(--primary-red);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 15px 30px -10px rgba(220, 38, 38, 0.2),
+                0 0 0 1px rgba(220, 38, 38, 0.1) inset;
+        }
+
+        .comparison-card.potential {
+            border-color: var(--success-green);
+            background: linear-gradient(145deg, rgba(34, 197, 94, 0.08) 0%, rgba(28, 28, 28, 0.95) 30%, rgba(18, 18, 18, 0.98) 100%);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 15px 30px -10px rgba(34, 197, 94, 0.15),
+                0 0 0 1px rgba(34, 197, 94, 0.1) inset;
+        }
+
+        .comparison-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+
+        .time-badge {
+            display: inline-block;
+            padding: 0.55rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.85rem 0 0.35rem;
+        }
+
+        .time-badge.inactive {
+            background: linear-gradient(145deg, rgba(220, 38, 38, 0.2) 0%, rgba(220, 38, 38, 0.1) 100%);
+            color: var(--primary-red-light);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        .time-badge.active {
+            background: linear-gradient(145deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%);
+            color: var(--success-green);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .time-detail {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .comparison-stats {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+            padding: 1.5rem 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            margin: 0 -0.5rem;
+        }
+
+        .comp-stat {
+            text-align: center;
+        }
+
+        .comp-value {
+            display: block;
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            text-shadow: 0 0 20px var(--glow-red);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .potential .comp-value {
+            color: var(--success-green);
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+        }
+
+        .highlight-stat .comp-value {
+            color: var(--success-green);
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+        }
+
+        .comp-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.35rem;
+        }
+
+        .comparison-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-red);
+        }
+
+        .comparison-arrow span {
+            font-size: 3.5rem;
+            display: block;
+            text-shadow: 0 0 30px var(--glow-red);
+            animation: pulse-arrow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-arrow {
+
+            0%,
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(10px);
+                opacity: 0.7;
+            }
+        }
+
+        .comparison-arrow p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .usage-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            padding: 0.85rem 1.25rem;
+            background: linear-gradient(145deg, rgba(220, 38, 38, 0.12) 0%, rgba(220, 38, 38, 0.05) 100%);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: var(--primary-red-light);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .usage-note.success {
+            background: linear-gradient(145deg, rgba(34, 197, 94, 0.12) 0%, rgba(34, 197, 94, 0.05) 100%);
+            color: var(--success-green);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .note-icon {
+            font-size: 1.1rem;
+        }
+
+        .comparison-insight {
+            max-width: 850px;
+            margin: 3.5rem auto 0;
+        }
+
+        .insight-highlight {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 24px;
+            padding: 2.75rem 3rem;
+            text-align: center;
+            border: 2px solid var(--primary-red);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 0 50px -15px rgba(220, 38, 38, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insight-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+        }
+
+        .insight-highlight h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .insight-highlight p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .insight-highlight strong {
+            color: var(--primary-red-light);
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            padding: 6rem 2rem;
+            background: linear-gradient(145deg, var(--primary-red-dark) 0%, var(--primary-red) 50%, var(--primary-red-dark) 100%);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 0, 0, 0.2) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+        }
+
+        .cta-content {
+            position: relative;
+            max-width: 750px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.75rem;
+            margin-bottom: 1.25rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1.15rem 2.75rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.02em;
+        }
+
+        .cta-button.primary {
+            background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+            color: var(--primary-red-dark);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                0 5px 15px rgba(0, 0, 0, 0.2),
+                0 1px 0 rgba(255, 255, 255, 0.5) inset;
+        }
+
+        .cta-button.primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 10px 20px rgba(0, 0, 0, 0.3),
+                0 1px 0 rgba(255, 255, 255, 0.5) inset;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary-red-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            background: var(--pure-black);
+            color: white;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            z-index: 1;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .footer-left img {
+            height: 42px;
+            object-fit: contain;
+            filter: brightness(1.1);
+        }
+
+        .footer-left p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        .footer-contact {
+            text-align: center;
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin: 0.35rem 0;
+            color: var(--text-secondary);
+        }
+
+        .footer-contact strong {
+            color: var(--primary-red);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.6rem;
+        }
+
+        .footer-right img {
+            height: 52px;
+            object-fit: contain;
+            /* Make Biohub logo white in footer (dark background) */
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-right .logo-caption {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-note {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.6rem;
+        }
+
+        .footer-note p {
+            margin: 0.2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-section {
+                align-items: center;
+            }
+
+            .header-right {
+                align-items: center;
+            }
+
+            .header-title h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 2rem 0;
+            }
+
+            .timeline-item::before,
+            .timeline-item::after,
+            .timeline-track,
+            .timeline-progress {
+                display: none;
+            }
+
+            .timeline-date {
+                text-align: left;
+                display: flex;
+                gap: 0.6rem;
+                align-items: baseline;
+                padding-right: 0;
+            }
+
+            .timeline-content {
+                margin-left: 0;
+            }
+
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                flex-direction: column;
+            }
+
+            .comparison-card {
+                max-width: 100%;
+            }
+
+            .comparison-arrow {
+                transform: rotate(90deg);
+                padding: 1rem 0;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-note {
+                text-align: center;
+            }
+
+            .footer-right {
+                align-items: center;
+            }
+
+            .footer-left {
+                align-items: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .insight-highlight {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px var(--glow-red);
+            }
+
+            50% {
+                box-shadow: 0 0 40px var(--glow-red);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes borderGlow {
+
+            0%,
+            100% {
+                border-color: rgba(220, 38, 38, 0.3);
+            }
+
+            50% {
+                border-color: rgba(220, 38, 38, 0.8);
+            }
+        }
+
+        @keyframes textGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px var(--glow-red);
+            }
+
+            50% {
+                text-shadow: 0 0 25px var(--glow-red), 0 0 40px var(--glow-red);
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(50px) rotateX(-10deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        /* Enhanced Card Animations */
+        .metric-card,
+        .timeline-item,
+        .opportunity-card,
+        .insight-card,
+        .chart-card {
+            animation: slideInFromBottom 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .metric-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .metric-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .metric-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .metric-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        /* Hero Animation */
+        .hero-content {
+            animation: fadeInScale 1.2s ease-out forwards;
+        }
+
+        .hero h2 {
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero p {
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Section Title Animation */
+        .section-title {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .section-title::after {
+            animation: shimmer 3s linear infinite;
+            background-size: 200% 100%;
+        }
+
+        /* Enhanced Hover Effects */
+        .metric-card:hover .metric-icon {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .metric-card:hover .metric-value {
+            animation: textGlow 1.5s ease-in-out infinite;
+        }
+
+        .metric-card.highlight:hover {
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        /* Timeline Hover Effects */
+        .timeline-content:hover {
+            border-color: rgba(220, 38, 38, 0.5);
+            animation: borderGlow 2s ease-in-out infinite;
+        }
+
+        .timeline-content:hover h3 {
+            color: var(--primary-red-light);
+            transition: color 0.3s ease;
+        }
+
+        /* Media Tag Hover */
+        .media-tag {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .media-tag:hover {
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Opportunity Card Hover */
+        .opportunity-card:hover h3 {
+            color: var(--primary-red-light);
+            transition: color 0.3s ease;
+        }
+
+        .opportunity-card:hover li::before {
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        /* Insight Card Hover */
+        .insight-card:hover .insight-icon {
+            animation: float 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .insight-card:hover h4 {
+            color: var(--primary-red-light);
+            transition: color 0.3s ease;
+        }
+
+        /* CTA Button Enhanced Hover */
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            letter-spacing: 0.05em;
+        }
+
+        /* Comparison Card Hover */
+        .comparison-card:hover {
+            box-shadow:
+                0 40px 80px -20px rgba(0, 0, 0, 0.6),
+                0 25px 50px -15px rgba(220, 38, 38, 0.2);
+        }
+
+        .comparison-card.potential:hover {
+            box-shadow:
+                0 40px 80px -20px rgba(0, 0, 0, 0.6),
+                0 25px 50px -15px rgba(34, 197, 94, 0.25);
+        }
+
+        .comparison-card:hover .comp-value {
+            animation: textGlow 1.5s ease-in-out infinite;
+        }
+
+        /* Chart Card Hover */
+        .chart-card:hover {
+            border-color: rgba(220, 38, 38, 0.4);
+        }
+
+        .chart-card:hover h3 {
+            color: var(--primary-red-light);
+            transition: color 0.3s ease;
+        }
+
+        /* Header Animation */
+        .header {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .header-title h1 {
+            animation: fadeInScale 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        /* Footer Hover Effects */
+        .footer-left img:hover,
+        .footer-right img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Stat Badge Hover */
+        .timeline-stats .stat:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(145deg, rgba(220, 38, 38, 0.25) 0%, rgba(220, 38, 38, 0.12) 100%);
+            transition: all 0.3s ease;
+        }
+
+        /* Insight Highlight Hover */
+        .insight-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 40px 80px -20px rgba(0, 0, 0, 0.6),
+                0 0 80px -20px rgba(220, 38, 38, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Usage Note Hover */
+        .usage-note:hover {
+            transform: translateY(-2px);
+            transition: transform 0.3s ease;
+        }
+
+        /* Time Badge Hover */
+        .time-badge:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Report Date Animation */
+        .report-date {
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        /* Logo Hover Effects */
+        .logo-section img:hover,
+        .header-right img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-red-dark);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-red);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <nav class="nav-menu">
+        <div class="nav-brand">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#growth">Growth</a></li>
+            <li><a href="#opportunity">Opportunity</a></li>
+            <li><a href="#comparison">Comparison</a></li>
+        </ul>
+        <div class="nav-controls">
+            <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Light/Dark Mode">
+                <div class="toggle-track">
+                    <div class="toggle-icon sun-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </div>
+                    <div class="toggle-icon moon-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="toggle-knob">
+                    <div class="knob-icon sun-knob-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </div>
+                    <div class="knob-icon moon-knob-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="https://www.newswise.com/assets/newTheme/img/logo-newSkin.png" alt="Newswise"
+                    onerror="this.style.display='none'">
+            </div>
+
+            <div class="header-title">
+                <h1>Chan Zuckerberg Biohub</h1>
+                <p>Media Coverage Analysis & Partnership Opportunity</p>
+                <div class="report-date">
+                    <span>Report Date: <strong>January 2026</strong></span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <img src="https://cdn.cookielaw.org/logos/2326d6bb-8fe3-44c1-be19-e6ce4db01b55/0198ceef-6341-76a9-9676-5b5f57bb14ff/0d454e32-6d2a-42c6-a304-5da7cb5ccb49/biohub-logo@4x.png"
+                    alt="Chan Zuckerberg Biohub" onerror="this.style.display='none'">
+                <span class="logo-caption">Chan Zuckerberg Biohub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Research is Making an Impact</h2>
+            <p>A comprehensive analysis of CZ Biohub's media presence through Newswise distribution</p>
+        </div>
+    </section>
+
+    <!-- Key Metrics Dashboard -->
+    <section class="metrics-section" id="metrics">
+        <h2 class="section-title">Executive Summary</h2>
+        <div class="metrics-grid">
+            <div class="metric-card highlight">
+                <div class="metric-icon">📰</div>
+                <div class="metric-value" data-count="5">0</div>
+                <div class="metric-label">Articles Published</div>
+                <div class="metric-detail">Via Newswise Distribution</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">👁️</div>
+                <div class="metric-value" data-count="35">0</div>
+                <div class="metric-label">Media Outlet Views</div>
+                <div class="metric-detail">Journalists Engaged</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">🔗</div>
+                <div class="metric-value" data-count="34">0</div>
+                <div class="metric-label">Media Clips</div>
+                <div class="metric-detail">Coverage Generated</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">📊</div>
+                <div class="metric-value" data-count="2685">0</div>
+                <div class="metric-label">Total Hits</div>
+                <div class="metric-detail">Engagement Metrics</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Performance Section -->
+    <section class="performance-section" id="performance">
+        <h2 class="section-title">Article Performance Breakdown</h2>
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3>Media Outlet Views by Article</h3>
+                <div class="chart-wrapper">
+                    <canvas id="outletViewsChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3>Engagement Distribution</h3>
+                <div class="chart-wrapper">
+                    <canvas id="engagementChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <h2 class="section-title">Publication Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-track"></div>
+            <div class="timeline-progress" id="timelineProgress"></div>
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <span class="month">SEP 20</span>
+                    <span class="year">2022</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>An Ocean of Possibilities</h3>
+                    <div class="timeline-stats">
+                        <span class="stat"><strong>4</strong> Media Outlet Views</span>
+                        <span class="stat"><strong>3</strong> Unique Outlets</span>
+                    </div>
+                    <p class="timeline-desc">Research on ocean exploration and marine biology breakthroughs</p>
+                    <div class="media-access">
+                        <span class="media-label">Key Media Access:</span>
+                        <div class="media-tags">
+                            <span class="media-tag red">Boy's Life</span>
+                            <span class="media-tag dark-red">Daily Beast</span>
+                            <span class="media-tag gray">Pulsul Tehnologiei</span>
+                            <span class="media-tag black">Env. Health Perspectives</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <span class="month">OCT 24</span>
+                    <span class="year">2022</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Machine Learning Enables 'Almost Perfect' Diagnosis of an Elusive Global Killer</h3>
+                    <div class="timeline-stats">
+                        <span class="stat"><strong>15</strong> Media Outlet Views</span>
+                        <span class="stat"><strong>5</strong> Unique Outlets</span>
+                    </div>
+                    <p class="timeline-desc">AI and machine learning applications in biological research</p>
+                    <div class="media-access">
+                        <span class="media-label">Key Media Access:</span>
+                        <div class="media-tags">
+                            <span class="media-tag red">Bottom Line Publications</span>
+                            <span class="media-tag dark-red">CLP Magazine</span>
+                            <span class="media-tag gray">HealthLeaders Media</span>
+                            <span class="media-tag light-gray">GenomeWeb</span>
+                            <span class="media-tag black">TechTaffy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item highlight-item">
+                <div class="timeline-date">
+                    <span class="month">JUL 10</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>New CZI AI Model Could Help Scientists Pinpoint Signs of Cancer Cells</h3>
+                    <div class="timeline-stats">
+                        <span class="stat"><strong>17</strong> Media Outlet Views</span>
+                        <span class="stat"><strong>9</strong> Unique Outlets</span>
+                    </div>
+                    <p class="timeline-desc">Breakthrough AI model for scientific discovery</p>
+                    <div class="media-access">
+                        <span class="media-label">Key Media Access:</span>
+                        <div class="media-tags">
+                            <span class="media-tag red">Hickman County Times</span>
+                            <span class="media-tag dark-red">Helix</span>
+                            <span class="media-tag gray">Scientriffic</span>
+                            <span class="media-tag light-gray">Pharma Commerce</span>
+                            <span class="media-tag black">AANA NewsBulletin</span>
+                            <span class="media-tag red">KJZZ-FM</span>
+                            <span class="media-tag gray">Slack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item highlight-item">
+                <div class="timeline-date">
+                    <span class="month">JUL 23</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>With No Need for Sleep or Food, AI-Built...</h3>
+                    <div class="timeline-stats">
+                        <span class="stat"><strong>13</strong> Media Outlet Views</span>
+                        <span class="stat"><strong>17</strong> Clips</span>
+                    </div>
+                    <p class="timeline-desc">Revolutionary AI research capabilities</p>
+                </div>
+            </div>
+            <div class="timeline-item highlight-item">
+                <div class="timeline-date">
+                    <span class="month">AUG 21</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Dynamic Duo: A Powerful Pair of Tools to Learn About Cells</h3>
+                    <div class="timeline-stats">
+                        <span class="stat"><strong>4</strong> Media Outlet Views</span>
+                        <span class="stat"><strong>3</strong> Unique Outlets</span>
+                        <span class="stat"><strong>1,923</strong> Hits</span>
+                    </div>
+                    <p class="timeline-desc">Innovative research tools for scientific advancement</p>
+                    <div class="media-access">
+                        <span class="media-label">Key Media Access:</span>
+                        <div class="media-tags">
+                            <span class="media-tag red">The Atlantic</span>
+                            <span class="media-tag gray">GenomeWeb</span>
+                            <span class="media-tag dark-red">FactorRH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Trend Section -->
+    <section class="growth-section" id="growth">
+        <h2 class="section-title">Growth & Momentum</h2>
+        <div class="growth-container">
+            <div class="chart-card wide">
+                <h3>Activity Timeline (2022-2025)</h3>
+                <div class="chart-wrapper">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="growth-insights">
+            <div class="insight-card">
+                <div class="insight-icon">🚀</div>
+                <h4>2025 Surge</h4>
+                <p>3 articles published in 2025 alone, showing renewed research output and media engagement</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon">📈</div>
+                <h4>Engagement Growth</h4>
+                <p>2,685 total hits demonstrate strong audience interest in CZ Biohub research</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon">🌐</div>
+                <h4>Media Reach</h4>
+                <p>35 unique media outlet views across diverse publication categories</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunity Section -->
+    <section class="opportunity-section" id="opportunity">
+        <h2 class="section-title">Partnership Opportunity</h2>
+        <div class="opportunity-intro">
+            <p>Based on your current performance, here's how Newswise can amplify CZ Biohub's research impact:</p>
+        </div>
+
+        <div class="opportunity-grid">
+            <div class="opportunity-card">
+                <div class="opp-header">
+                    <span class="opp-number">01</span>
+                    <h3>Expanded Distribution</h3>
+                </div>
+                <p>Access to 4,000+ journalists and media outlets actively seeking science and health stories</p>
+                <ul>
+                    <li>Targeted journalist matching</li>
+                    <li>Embargo management</li>
+                    <li>Multi-channel distribution</li>
+                </ul>
+            </div>
+
+            <div class="opportunity-card">
+                <div class="opp-header">
+                    <span class="opp-number">02</span>
+                    <h3>Enhanced Analytics</h3>
+                </div>
+                <p>Real-time tracking and comprehensive reporting on your research coverage</p>
+                <ul>
+                    <li>Media outlet tracking</li>
+                    <li>Engagement metrics</li>
+                    <li>ROI measurement</li>
+                </ul>
+            </div>
+
+            <div class="opportunity-card">
+                <div class="opp-header">
+                    <span class="opp-number">03</span>
+                    <h3>Expert Database</h3>
+                </div>
+                <p>Position CZ Biohub researchers as go-to experts for media inquiries</p>
+                <ul>
+                    <li>Expert profile creation</li>
+                    <li>Media inquiry matching</li>
+                    <li>Thought leadership</li>
+                </ul>
+            </div>
+
+            <div class="opportunity-card highlight-opp">
+                <div class="opp-header">
+                    <span class="opp-number">04</span>
+                    <h3>Strategic Support</h3>
+                </div>
+                <p>Dedicated support to maximize your research communication strategy</p>
+                <ul>
+                    <li>Content optimization</li>
+                    <li>Timing recommendations</li>
+                    <li>Audience targeting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section" id="comparison">
+        <h2 class="section-title">What's Possible: A Success Story</h2>
+        <div class="comparison-intro">
+            <p>See how the Focused Ultrasound Foundation maximized their Newswise partnership with consistent, strategic
+                usage:</p>
+        </div>
+        <div class="comparison-grid">
+            <div class="comparison-card current">
+                <h3>CZ Biohub</h3>
+                <div class="time-badge inactive">3+ Years on Platform</div>
+                <div class="time-detail">Since September 2022</div>
+                <div class="comparison-stats">
+                    <div class="comp-stat">
+                        <span class="comp-value">5</span>
+                        <span class="comp-label">Articles</span>
+                    </div>
+                    <div class="comp-stat">
+                        <span class="comp-value">35</span>
+                        <span class="comp-label">Media Views</span>
+                    </div>
+                    <div class="comp-stat">
+                        <span class="comp-value">34</span>
+                        <span class="comp-label">Clips</span>
+                    </div>
+                </div>
+                <div class="usage-note">
+                    <span class="note-icon">⚠️</span>
+                    <span>Gap in activity: Oct 2022 – Jul 2025</span>
+                </div>
+            </div>
+            <div class="comparison-arrow">
+                <span>→</span>
+                <p>With Consistent Usage</p>
+            </div>
+            <div class="comparison-card potential">
+                <h3>Focused Ultrasound Foundation</h3>
+                <div class="time-badge active">1 Year on Platform</div>
+                <div class="time-detail">January – December 2025</div>
+                <div class="comparison-stats">
+                    <div class="comp-stat">
+                        <span class="comp-value">17</span>
+                        <span class="comp-label">Articles</span>
+                    </div>
+                    <div class="comp-stat">
+                        <span class="comp-value">94</span>
+                        <span class="comp-label">Media Views</span>
+                    </div>
+                    <div class="comp-stat highlight-stat">
+                        <span class="comp-value">+112%</span>
+                        <span class="comp-label">YoY Growth</span>
+                    </div>
+                </div>
+                <div class="usage-note success">
+                    <span class="note-icon">✓</span>
+                    <span>Consistent monthly publishing</span>
+                </div>
+            </div>
+        </div>
+        <div class="comparison-insight">
+            <div class="insight-highlight">
+                <h4>The Key Difference: Consistency</h4>
+                <p>Focused Ultrasound Foundation achieved <strong>3.4x more articles</strong> and <strong>2.7x more
+                        media views</strong> in just <strong>one year</strong> through regular, strategic content
+                    distribution. Imagine what CZ Biohub could achieve with the same approach.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Let's Amplify Your Research Impact</h2>
+            <p>CZ Biohub's groundbreaking work deserves maximum visibility. Let's discuss how we can help you reach more
+                journalists, generate more coverage, and increase your research impact.</p>
+            <div class="cta-buttons">
+                <a href="tel:4342969417" class="cta-button primary">Schedule a Call</a>
+                <a href="mailto:info@newswise.com" class="cta-button secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="https://www.newswise.com/assets/newTheme/img/logo-newSkin.png" alt="Newswise"
+                    onerror="this.style.display='none'">
+                <p>Connecting Research to the World</p>
+            </div>
+
+            <div class="footer-contact">
+                <p><strong>Contact Us</strong></p>
+                <p>Email: contact@newswise.com</p>
+                <p>Web: www.newswise.com</p>
+            </div>
+
+            <div class="footer-right">
+                <img src="https://cdn.cookielaw.org/logos/2326d6bb-8fe3-44c1-be19-e6ce4db01b55/0198ceef-6341-76a9-9676-5b5f57bb14ff/0d454e32-6d2a-42c6-a304-5da7cb5ccb49/biohub-logo@4x.png"
+                    alt="Chan Zuckerberg Biohub" onerror="this.style.display='none'">
+                <span class="logo-caption">Chan Zuckerberg Biohub</span>
+                <div class="footer-note">
+                    <p>Report prepared exclusively for Chan Zuckerberg Biohub</p>
+                    <p>Data as of January 8, 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* --- JAVASCRIPT --- */
+
+        // Animated Counter with easing
+        function animateCounters() {
+            const counters = document.querySelectorAll('.metric-value[data-count]');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2500;
+                const startTime = performance.now();
+
+                const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+
+                const updateCounter = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutQuart(progress);
+                    const current = Math.floor(easedProgress * target);
+
+                    counter.textContent = current.toLocaleString();
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // Chart.js Configuration - Colorful Theme
+        const chartColors = {
+            // Primary colors
+            red: '#dc2626',
+            redLight: '#ef4444',
+            redDark: '#991b1b',
+            // Vibrant color palette
+            blue: '#3b82f6',
+            blueLight: '#60a5fa',
+            blueDark: '#2563eb',
+            purple: '#8b5cf6',
+            purpleLight: '#a78bfa',
+            purpleDark: '#7c3aed',
+            teal: '#14b8a6',
+            tealLight: '#2dd4bf',
+            tealDark: '#0d9488',
+            orange: '#f97316',
+            orangeLight: '#fb923c',
+            orangeDark: '#ea580c',
+            pink: '#ec4899',
+            pinkLight: '#f472b6',
+            pinkDark: '#db2777',
+            yellow: '#eab308',
+            yellowLight: '#facc15',
+            yellowDark: '#ca8a04',
+            green: '#22c55e',
+            greenLight: '#4ade80',
+            greenDark: '#16a34a',
+            cyan: '#06b6d4',
+            cyanLight: '#22d3ee',
+            cyanDark: '#0891b2',
+            // Neutrals
+            white: '#ffffff',
+            gray: '#9ca3af',
+            grayLight: '#d1d5db',
+            grayDark: '#4b5563',
+            black: '#1a1a1a',
+            gridColor: 'rgba(255, 255, 255, 0.08)',
+            tooltipBg: 'rgba(20, 20, 20, 0.95)'
+        };
+
+        // Set Chart.js defaults for elegant dark theme
+        Chart.defaults.color = '#ffffff';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.08)';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.font.weight = '600';
+
+        // Article Data
+        const articleData = [
+            { title: 'An Ocean of Possibilities', date: 'Sep 2022', views: 4, clips: 0, hits: 0 },
+            { title: 'Machine Learning Enables...', date: 'Oct 2022', views: 6, clips: 12, hits: 0 },
+            { title: 'New CZI AI Model...', date: 'Jul 2025', views: 9, clips: 5, hits: 762 },
+            { title: 'AI-Built Research...', date: 'Jul 2025', views: 13, clips: 17, hits: 0 },
+            { title: 'Dynamic Duo: Tools...', date: 'Aug 2025', views: 3, clips: 0, hits: 1923 }
+        ];
+
+        // 3D Bar Chart with Colorful Bars and Data Labels
+        function createOutletViewsChart() {
+            const ctx = document.getElementById('outletViewsChart').getContext('2d');
+            const isLightMode = document.body.classList.contains('light-mode');
+            const textColor = isLightMode ? '#1e293b' : '#ffffff';
+            const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
+
+            // Colorful gradients for each bar
+            const barColors = [
+                { main: chartColors.blue, light: chartColors.blueLight, dark: chartColors.blueDark },
+                { main: chartColors.purple, light: chartColors.purpleLight, dark: chartColors.purpleDark },
+                { main: chartColors.teal, light: chartColors.tealLight, dark: chartColors.tealDark },
+                { main: chartColors.orange, light: chartColors.orangeLight, dark: chartColors.orangeDark },
+                { main: chartColors.pink, light: chartColors.pinkLight, dark: chartColors.pinkDark }
+            ];
+
+            // Create individual gradients for each bar
+            const backgroundColors = barColors.map((color, i) => {
+                const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+                gradient.addColorStop(0, color.light);
+                gradient.addColorStop(0.5, color.main);
+                gradient.addColorStop(1, color.dark);
+                return gradient;
+            });
+
+            const borderColors = barColors.map(color => color.light);
+
+            // Plugin to show values on top of bars
+            const barLabelsPlugin = {
+                id: 'barLabels',
+                afterDatasetsDraw: function (chart) {
+                    const ctx = chart.ctx;
+                    const meta = chart.getDatasetMeta(1);
+                    const isLight = document.body.classList.contains('light-mode');
+
+                    meta.data.forEach((bar, index) => {
+                        const value = articleData[index].views;
+                        const x = bar.x;
+                        const y = bar.y - 15;
+
+                        ctx.save();
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'bottom';
+                        ctx.font = 'bold 16px Inter, sans-serif';
+                        ctx.fillStyle = isLight ? '#1e293b' : '#ffffff';
+                        ctx.shadowColor = isLight ? 'rgba(0, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0.5)';
+                        ctx.shadowBlur = 4;
+                        ctx.fillText(value, x, y);
+                        ctx.restore();
+                    });
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: articleData.map(a => a.title.substring(0, 18) + '...'),
+                    datasets: [
+                        // Shadow layer for 3D effect
+                        {
+                            label: 'Shadow',
+                            data: articleData.map(a => a.views),
+                            backgroundColor: isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(0, 0, 0, 0.3)',
+                            borderColor: 'transparent',
+                            borderWidth: 0,
+                            borderRadius: 10,
+                            borderSkipped: false,
+                            barThickness: 45,
+                            grouped: false, // Important for layering
+                        },
+                        // Main colorful bars
+                        {
+                            label: 'Media Outlet Views',
+                            data: articleData.map(a => a.views),
+                            backgroundColor: backgroundColors,
+                            borderColor: borderColors,
+                            borderWidth: 2,
+                            borderRadius: {
+                                topLeft: 10,
+                                topRight: 10,
+                                bottomLeft: 10,
+                                bottomRight: 10
+                            },
+                            borderSkipped: false,
+                            barThickness: 40,
+                            grouped: false, // Important for layering
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false, // Allows hovering the "shadow" or gap to trigger tooltip
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: isLightMode ? 'rgba(255, 255, 255, 0.95)' : chartColors.tooltipBg,
+                            titleColor: isLightMode ? '#1e293b' : chartColors.white,
+                            bodyColor: isLightMode ? '#64748b' : chartColors.grayLight,
+                            borderColor: 'rgba(59, 130, 246, 0.5)',
+                            borderWidth: 1,
+                            titleFont: { size: 14, weight: '600' },
+                            bodyFont: { size: 13 },
+                            padding: 16,
+                            cornerRadius: 12,
+                            displayColors: true,
+                            filter: function (tooltipItem) {
+                                return tooltipItem.datasetIndex === 1;
+                            },
+                            callbacks: {
+                                title: function (context) {
+                                    return articleData[context[0].dataIndex].title;
+                                },
+                                label: function (context) {
+                                    return `${context.parsed.y} Media Outlet Views`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: gridColor,
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                font: { size: 12, weight: '600' },
+                                color: textColor,
+                                padding: 10
+                            },
+                            border: {
+                                display: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: { size: 10, weight: '600' },
+                                maxRotation: 45,
+                                color: textColor,
+                                padding: 8
+                            },
+                            border: {
+                                display: false
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 10,
+                            top: 30,
+                            bottom: 10
+                        }
+                    }
+                },
+                plugins: [barLabelsPlugin]
+            });
+        }
+
+        function createEngagementChart() {
+            const ctx = document.getElementById('engagementChart').getContext('2d');
+            const isLightMode = document.body.classList.contains('light-mode');
+            const textColor = isLightMode ? '#0f172a' : '#ffffff'; // Darker text for light mode
+            const secondaryText = isLightMode ? '#475569' : '#9ca3af'; // Darker secondary for light mode
+
+            // Plugin to display values on segments and center text
+            const centerTextPlugin = {
+                id: 'centerText',
+                afterDraw: function (chart) {
+                    const ctx = chart.ctx;
+                    const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
+                    const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
+                    const isLight = document.body.classList.contains('light-mode');
+
+                    ctx.save();
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+
+                    // Total value
+                    ctx.font = '800 42px Inter, sans-serif';
+                    ctx.fillStyle = isLight ? '#0f172a' : '#ffffff';
+                    ctx.fillText('2,754', centerX, centerY - 10);
+
+                    // Label
+                    ctx.font = '500 14px Inter, sans-serif';
+                    ctx.fillStyle = isLight ? '#64748b' : '#9ca3af';
+                    ctx.fillText('Total Engagement', centerX, centerY + 25);
+
+                    ctx.restore();
+                }
+            };
+
+            const dataLabelsPlugin = {
+                id: 'dataLabels',
+                afterDatasetsDraw: function (chart) {
+                    const ctx = chart.ctx;
+
+                    chart.data.datasets.forEach((dataset, datasetIndex) => {
+                        // Skip Shadow dataset for labels (assuming shadow is index 0 or has 'Shadow' label)
+                        // Also check if dataset matches our shadow configuration
+                        if (dataset.label === 'Shadow' || datasetIndex === 0) return;
+
+                        const meta = chart.getDatasetMeta(datasetIndex);
+                        const labels = ['35', '34', '2,685'];
+                        const isLight = document.body.classList.contains('light-mode');
+
+                        meta.data.forEach((arc, index) => {
+                            // Only draw if the arc is visible
+                            if (arc.circumference < 0.1) return;
+
+                            const centerPoint = arc.getCenterPoint();
+                            // Move label slightly outward for better visibility
+                            const midAngle = (arc.startAngle + arc.endAngle) / 2;
+                            const radius = (arc.innerRadius + arc.outerRadius) / 2;
+
+                            const x = centerPoint.x + Math.cos(midAngle) * (radius * 0.15);
+                            const y = centerPoint.y + Math.sin(midAngle) * (radius * 0.15);
+
+                            ctx.save();
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.font = 'bold 16px Inter, sans-serif';
+
+                            // Text Stroke for better contrast on any background
+                            // Use a dark stroke to make white text pop on colored backgrounds
+                            ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+                            ctx.lineWidth = 3;
+                            ctx.strokeText(labels[index], x, y);
+
+                            // Text Fill
+                            ctx.fillStyle = '#ffffff'; // White text
+
+                            // Add shadow for extra pop
+                            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+                            ctx.shadowBlur = 4;
+                            ctx.fillText(labels[index], x, y);
+
+                            ctx.restore();
+                        });
+                    });
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Media Outlet Views (35)', 'Media Clips (34)', 'Total Hits (2,685)'],
+                    datasets: [
+                        // Shadow layer
+                        {
+                            label: 'Shadow',
+                            data: [35, 34, 27],
+                            backgroundColor: [
+                                isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(0, 0, 0, 0.4)',
+                                isLightMode ? 'rgba(0, 0, 0, 0.06)' : 'rgba(0, 0, 0, 0.3)',
+                                isLightMode ? 'rgba(0, 0, 0, 0.04)' : 'rgba(0, 0, 0, 0.2)'
+                            ],
+                            borderWidth: 0,
+                            offset: 8,
+                            spacing: 3
+                        },
+                        // Main colorful layer
+                        {
+                            label: 'Main',
+                            data: [35, 34, 27],
+                            backgroundColor: [
+                                chartColors.blue,
+                                chartColors.purple,
+                                chartColors.teal
+                            ],
+                            hoverBackgroundColor: [
+                                chartColors.blueLight,
+                                chartColors.purpleLight,
+                                chartColors.tealLight
+                            ],
+                            borderColor: [
+                                chartColors.blueDark,
+                                chartColors.purpleDark,
+                                chartColors.tealDark
+                            ],
+                            borderWidth: 3,
+                            hoverOffset: 15,
+                            spacing: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 30,
+                                font: { size: 14, weight: '700' },
+                                usePointStyle: true,
+                                pointStyle: 'circle',
+                                color: textColor,
+                                boxWidth: 15,
+                                boxHeight: 15,
+                                generateLabels: function (chart) {
+                                    const data = chart.data;
+                                    const actualValues = [35, 34, 2685];
+                                    const labelNames = ['Media Outlet Views', 'Media Clips', 'Total Hits'];
+                                    const isLight = document.body.classList.contains('light-mode');
+                                    return labelNames.map((label, i) => ({
+                                        text: `${label}: ${actualValues[i].toLocaleString()}`,
+                                        fillStyle: data.datasets[1].backgroundColor[i],
+                                        strokeStyle: data.datasets[1].backgroundColor[i],
+                                        lineWidth: 0,
+                                        pointStyle: 'circle',
+                                        hidden: false,
+                                        index: i,
+                                        fontColor: isLight ? '#1e293b' : '#ffffff'
+                                    }));
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: isLightMode ? 'rgba(255, 255, 255, 0.95)' : chartColors.tooltipBg,
+                            titleColor: isLightMode ? '#1e293b' : chartColors.white,
+                            bodyColor: isLightMode ? '#64748b' : chartColors.grayLight,
+                            borderColor: 'rgba(139, 92, 246, 0.5)',
+                            borderWidth: 1,
+                            padding: 16,
+                            cornerRadius: 12,
+                            displayColors: true,
+                            filter: function (tooltipItem) {
+                                return tooltipItem.datasetIndex === 1;
+                            },
+                            callbacks: {
+                                label: function (context) {
+                                    const actualValues = [35, 34, 2685];
+                                    const labelNames = ['Media Outlet Views', 'Media Clips', 'Total Hits'];
+                                    return `${labelNames[context.dataIndex]}: ${actualValues[context.dataIndex].toLocaleString()}`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%',
+                    layout: {
+                        padding: 20
+                    }
+                },
+                plugins: [centerTextPlugin, dataLabelsPlugin]
+            });
+        }
+
+        // 3D Area/Line Chart with colorful lines
+        function createTimelineChart() {
+            const ctx = document.getElementById('timelineChart').getContext('2d');
+            const isLightMode = document.body.classList.contains('light-mode');
+            const textColor = isLightMode ? '#1e293b' : '#ffffff';
+            const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
+
+            // Create colorful gradients
+            const areaGradient1 = ctx.createLinearGradient(0, 0, 0, 350);
+            areaGradient1.addColorStop(0, isLightMode ? 'rgba(236, 72, 153, 0.3)' : 'rgba(236, 72, 153, 0.5)');
+            areaGradient1.addColorStop(0.5, isLightMode ? 'rgba(236, 72, 153, 0.1)' : 'rgba(236, 72, 153, 0.2)');
+            areaGradient1.addColorStop(1, 'rgba(236, 72, 153, 0)');
+
+            const lineGradient1 = ctx.createLinearGradient(0, 0, ctx.canvas.width, 0);
+            lineGradient1.addColorStop(0, chartColors.pinkDark);
+            lineGradient1.addColorStop(0.5, chartColors.pink);
+            lineGradient1.addColorStop(1, chartColors.pinkLight);
+
+            const areaGradient2 = ctx.createLinearGradient(0, 0, 0, 350);
+            areaGradient2.addColorStop(0, isLightMode ? 'rgba(6, 182, 212, 0.2)' : 'rgba(6, 182, 212, 0.3)');
+            areaGradient2.addColorStop(0.5, isLightMode ? 'rgba(6, 182, 212, 0.05)' : 'rgba(6, 182, 212, 0.1)');
+            areaGradient2.addColorStop(1, 'rgba(6, 182, 212, 0)');
+
+            // Plugin to show values on data points
+            const lineLabelsPlugin = {
+                id: 'lineLabels',
+                afterDatasetsDraw: function (chart) {
+                    const ctx = chart.ctx;
+                    const isLight = document.body.classList.contains('light-mode');
+
+                    // Draw labels for Articles Published (dataset index 1)
+                    const meta1 = chart.getDatasetMeta(1);
+                    const data1 = [1, 1, 0, 0, 0, 2, 1];
+                    meta1.data.forEach((point, index) => {
+                        if (data1[index] > 0) {
+                            ctx.save();
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'bottom';
+                            ctx.font = 'bold 12px Inter, sans-serif';
+                            ctx.fillStyle = isLight ? chartColors.pinkDark : chartColors.pinkLight;
+                            ctx.shadowColor = isLight ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.7)';
+                            ctx.shadowBlur = 3;
+                            ctx.fillText(data1[index], point.x, point.y - 12);
+                            ctx.restore();
+                        }
+                    });
+
+                    // Draw labels for Media Outlet Views (dataset index 2)
+                    const meta2 = chart.getDatasetMeta(2);
+                    const data2 = [4, 6, 0, 0, 0, 22, 3];
+                    meta2.data.forEach((point, index) => {
+                        if (data2[index] > 0) {
+                            ctx.save();
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'bottom';
+                            ctx.font = 'bold 12px Inter, sans-serif';
+                            ctx.fillStyle = isLight ? chartColors.cyanDark : chartColors.cyanLight;
+                            ctx.shadowColor = isLight ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.7)';
+                            ctx.shadowBlur = 3;
+                            ctx.fillText(data2[index], point.x, point.y - 12);
+                            ctx.restore();
+                        }
+                    });
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Sep 2022', 'Oct 2022', 'Nov 2022', '...', 'Jun 2025', 'Jul 2025', 'Aug 2025'],
+                    datasets: [
+                        // Shadow for 3D effect
+                        {
+                            label: 'Shadow',
+                            data: [1, 1, 0, 0, 0, 2, 1],
+                            fill: true,
+                            backgroundColor: isLightMode ? 'rgba(0, 0, 0, 0.05)' : 'rgba(0, 0, 0, 0.2)',
+                            borderColor: 'transparent',
+                            tension: 0.4,
+                            pointRadius: 0,
+                        },
+                        {
+                            label: 'Articles Published',
+                            data: [1, 1, 0, 0, 0, 2, 1],
+                            fill: true,
+                            backgroundColor: areaGradient1,
+                            borderColor: lineGradient1,
+                            borderWidth: 4,
+                            tension: 0.4,
+                            pointBackgroundColor: chartColors.pink,
+                            pointBorderColor: isLightMode ? '#ffffff' : chartColors.white,
+                            pointBorderWidth: 3,
+                            pointRadius: 8,
+                            pointHoverRadius: 12,
+                            pointHoverBorderWidth: 4,
+                            pointHoverBackgroundColor: chartColors.pinkLight,
+                        },
+                        {
+                            label: 'Media Outlet Views',
+                            data: [4, 6, 0, 0, 0, 22, 3],
+                            fill: true,
+                            backgroundColor: areaGradient2,
+                            borderColor: chartColors.cyan,
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointBackgroundColor: chartColors.cyan,
+                            pointBorderColor: isLightMode ? '#ffffff' : chartColors.white,
+                            pointBorderWidth: 3,
+                            pointRadius: 7,
+                            pointHoverRadius: 11,
+                            pointHoverBorderWidth: 4,
+                            pointHoverBackgroundColor: chartColors.cyanLight,
+                            borderDash: [],
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            align: 'end',
+                            labels: {
+                                padding: 25,
+                                font: { size: 13, weight: '600' },
+                                usePointStyle: true,
+                                pointStyle: 'circle',
+                                color: textColor,
+                                filter: function (item) {
+                                    return item.text !== 'Shadow';
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: isLightMode ? 'rgba(255, 255, 255, 0.95)' : chartColors.tooltipBg,
+                            titleColor: isLightMode ? '#1e293b' : chartColors.white,
+                            bodyColor: isLightMode ? '#64748b' : chartColors.grayLight,
+                            borderColor: 'rgba(236, 72, 153, 0.5)',
+                            borderWidth: 1,
+                            padding: 16,
+                            cornerRadius: 12,
+                            mode: 'index',
+                            intersect: false,
+                            filter: function (tooltipItem) {
+                                return tooltipItem.dataset.label !== 'Shadow';
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: gridColor,
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                color: textColor,
+                                font: { size: 12, weight: '600' },
+                                padding: 12
+                            },
+                            border: {
+                                display: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: textColor,
+                                font: { size: 11, weight: '600' },
+                                padding: 10
+                            },
+                            border: {
+                                display: false
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'nearest',
+                        axis: 'x',
+                        intersect: false
+                    },
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 20,
+                            top: 30,
+                            bottom: 10
+                        }
+                    }
+                },
+                plugins: [lineLabelsPlugin]
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0) rotateX(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.metric-card, .timeline-item, .opportunity-card, .insight-card, .chart-card, .comparison-card').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px) rotateX(-5deg)';
+                el.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)`;
+                el.style.transitionDelay = `${index * 0.05}s`;
+                observer.observe(el);
+            });
+        }
+
+        // Parallax effect for hero
+        function setupParallax() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero-content');
+                if (hero && scrolled < window.innerHeight) {
+                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    hero.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+                }
+
+                // Update Scroll Progress Bar
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolledPct = (winScroll / height) * 100;
+                const progressBar = document.getElementById("scrollProgressBar");
+                if (progressBar) {
+                    progressBar.style.width = scrolledPct + "%";
+                }
+
+                // Update Timeline Progress
+                const timeline = document.querySelector('.timeline');
+                const timelineBar = document.getElementById('timelineProgress');
+                if (timeline && timelineBar) {
+                    const rect = timeline.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    // Start filling when top is at 70% of viewport
+                    const startPoint = windowHeight * 0.7;
+
+                    if (rect.top <= startPoint) {
+                        const distanceScrolled = startPoint - rect.top;
+                        let percentage = (distanceScrolled / rect.height) * 100;
+                        percentage = Math.max(0, Math.min(100, percentage));
+                        timelineBar.style.height = percentage + '%';
+                    } else {
+                        timelineBar.style.height = '0%';
+                    }
+                }
+            });
+        }
+
+        // Theme Toggle Function
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const isLightMode = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+
+            // Update chart colors for light mode
+            updateChartColors(isLightMode);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Update chart colors based on theme
+        function updateChartColors(isLightMode) {
+            const textColor = isLightMode ? '#1e293b' : '#ffffff';
+            const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
+            const secondaryText = isLightMode ? '#64748b' : '#9ca3af';
+
+            Chart.defaults.color = textColor;
+            Chart.defaults.borderColor = gridColor;
+
+            // Update chartColors object
+            chartColors.gridColor = gridColor;
+
+            // Recreate charts with new colors
+            const outletChart = Chart.getChart('outletViewsChart');
+            const engagementChart = Chart.getChart('engagementChart');
+            const timelineChart = Chart.getChart('timelineChart');
+
+            if (outletChart) outletChart.destroy();
+            if (engagementChart) engagementChart.destroy();
+            if (timelineChart) timelineChart.destroy();
+
+            createOutletViewsChart();
+            createEngagementChart();
+            createTimelineChart();
+        }
+
+        // Check for saved theme preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize theme
+            initTheme();
+
+            // Animate counters
+            setTimeout(animateCounters, 600);
+
+            // Create charts
+            createOutletViewsChart();
+            createEngagementChart();
+            createTimelineChart();
+
+            // Setup scroll animations
+            setupScrollAnimations();
+
+            // Setup parallax
+            setupParallax();
+        });
+    </script>
+</body>
+
+</html>
