@@ -383,9 +383,9 @@
             filter: brightness(0) invert(1);
         }
 
-        /* In light mode, show original Biohub logo colors */
+        /* In light mode, make Biohub logo dark */
         body.light-mode .header-right img {
-            filter: none;
+            filter: brightness(0);
         }
 
         .header-right .logo-caption,
@@ -737,7 +737,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, #141414 0%, var(--primary-red-dark) 50%, #0c0c0c 100%);
+            background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #7f1d1d 100%);
             color: white;
             padding: 6rem 2rem;
             text-align: center;
@@ -752,8 +752,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.3) 0%, transparent 40%),
-                radial-gradient(circle at 70% 80%, rgba(220, 38, 38, 0.2) 0%, transparent 40%);
+                radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 40%);
             pointer-events: none;
         }
 
@@ -951,34 +951,54 @@
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
 
+        .metric-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke-width: 1.5;
+        }
+
+        .metric-card:nth-child(1) .metric-icon svg {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .metric-card:nth-child(2) .metric-icon svg {
+            color: #a78bfa;
+        }
+
+        .metric-card:nth-child(3) .metric-icon svg {
+            color: #5eead4;
+        }
+
+        .metric-card:nth-child(4) .metric-icon svg {
+            color: #fbbf24;
+        }
+
         .metric-value {
             font-size: 4rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary-red);
             line-height: 1;
-            text-shadow: 0 2px 20px rgba(220, 38, 38, 0.3);
             font-family: 'Inter', sans-serif;
             letter-spacing: -0.03em;
         }
 
         .metric-card:nth-child(1) .metric-value {
-            color: #3b82f6;
-            text-shadow: 0 2px 20px rgba(59, 130, 246, 0.4);
+            color: #ffffff;
         }
 
         .metric-card:nth-child(2) .metric-value {
-            color: #8b5cf6;
-            text-shadow: 0 2px 20px rgba(139, 92, 246, 0.4);
+            color: #c4b5fd;
+            text-shadow: 0 0 40px rgba(167, 139, 250, 0.4);
         }
 
         .metric-card:nth-child(3) .metric-value {
-            color: #14b8a6;
-            text-shadow: 0 2px 20px rgba(20, 184, 166, 0.4);
+            color: #5eead4;
+            text-shadow: 0 0 40px rgba(94, 234, 212, 0.4);
         }
 
         .metric-card:nth-child(4) .metric-value {
-            color: #f97316;
-            text-shadow: 0 2px 20px rgba(249, 115, 22, 0.4);
+            color: #fcd34d;
+            text-shadow: 0 0 40px rgba(252, 211, 77, 0.4);
         }
 
         .metric-card.highlight .metric-value {
@@ -2687,7 +2707,7 @@
 
             <div class="header-title">
                 <h1>Chan Zuckerberg Biohub</h1>
-                <p>Media Coverage Analysis & Partnership Opportunity</p>
+                <p>Media Coverage Analysis & Options to Increase Results</p>
                 <div class="report-date">
                     <span>Report Date: <strong>January 2026</strong></span>
                 </div>
@@ -2714,26 +2734,46 @@
         <h2 class="section-title">Executive Summary</h2>
         <div class="metrics-grid">
             <div class="metric-card highlight">
-                <div class="metric-icon">📰</div>
+                <div class="metric-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+                        <path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/>
+                    </svg>
+                </div>
                 <div class="metric-value" data-count="5">0</div>
                 <div class="metric-label">Articles Published</div>
                 <div class="metric-detail">Via Newswise Distribution</div>
             </div>
             <div class="metric-card">
-                <div class="metric-icon">👁️</div>
+                <div class="metric-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
                 <div class="metric-value" data-count="35">0</div>
                 <div class="metric-label">Media Outlet Views</div>
                 <div class="metric-detail">Journalists Engaged</div>
             </div>
             <div class="metric-card">
-                <div class="metric-icon">🔗</div>
+                <div class="metric-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
+                </div>
                 <div class="metric-value" data-count="34">0</div>
                 <div class="metric-label">Media Clips</div>
                 <div class="metric-detail">Coverage Generated</div>
             </div>
             <div class="metric-card">
-                <div class="metric-icon">📊</div>
-                <div class="metric-value" data-count="2685">0</div>
+                <div class="metric-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v18h18"/>
+                        <path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>
+                    </svg>
+                </div>
+                <div class="metric-value" data-count="15610">0</div>
                 <div class="metric-label">Total Hits</div>
                 <div class="metric-detail">Engagement Metrics</div>
             </div>
@@ -2889,28 +2929,12 @@
                 </div>
             </div>
         </div>
-        <div class="growth-insights">
-            <div class="insight-card">
-                <div class="insight-icon">🚀</div>
-                <h4>2025 Surge</h4>
-                <p>3 articles published in 2025 alone, showing renewed research output and media engagement</p>
-            </div>
-            <div class="insight-card">
-                <div class="insight-icon">📈</div>
-                <h4>Engagement Growth</h4>
-                <p>2,685 total hits demonstrate strong audience interest in CZ Biohub research</p>
-            </div>
-            <div class="insight-card">
-                <div class="insight-icon">🌐</div>
-                <h4>Media Reach</h4>
-                <p>35 unique media outlet views across diverse publication categories</p>
-            </div>
-        </div>
+
     </section>
 
     <!-- Opportunity Section -->
     <section class="opportunity-section" id="opportunity">
-        <h2 class="section-title">Partnership Opportunity</h2>
+        <h2 class="section-title">Options to Increase Results</h2>
         <div class="opportunity-intro">
             <p>Based on your current performance, here's how Newswise can amplify CZ Biohub's research impact:</p>
         </div>
@@ -2974,7 +2998,7 @@
     <section class="comparison-section" id="comparison">
         <h2 class="section-title">What's Possible: A Success Story</h2>
         <div class="comparison-intro">
-            <p>See how the Focused Ultrasound Foundation maximized their Newswise partnership with consistent, strategic
+            <p>See how similar organizations have maximized their Newswise partnership with consistent, strategic
                 usage:</p>
         </div>
         <div class="comparison-grid">
@@ -3006,7 +3030,7 @@
                 <p>With Consistent Usage</p>
             </div>
             <div class="comparison-card potential">
-                <h3>Focused Ultrasound Foundation</h3>
+                <h3>Similar Organization</h3>
                 <div class="time-badge active">1 Year on Platform</div>
                 <div class="time-detail">January – December 2025</div>
                 <div class="comparison-stats">
@@ -3032,7 +3056,7 @@
         <div class="comparison-insight">
             <div class="insight-highlight">
                 <h4>The Key Difference: Consistency</h4>
-                <p>Focused Ultrasound Foundation achieved <strong>3.4x more articles</strong> and <strong>2.7x more
+                <p>Similar organizations have achieved <strong>3.4x more articles</strong> and <strong>2.7x more
                         media views</strong> in just <strong>one year</strong> through regular, strategic content
                     distribution. Imagine what CZ Biohub could achieve with the same approach.</p>
             </div>
@@ -3161,11 +3185,11 @@
 
         // Article Data
         const articleData = [
-            { title: 'An Ocean of Possibilities', date: 'Sep 2022', views: 4, clips: 0, hits: 0 },
-            { title: 'Machine Learning Enables...', date: 'Oct 2022', views: 6, clips: 12, hits: 0 },
-            { title: 'New CZI AI Model...', date: 'Jul 2025', views: 9, clips: 5, hits: 762 },
-            { title: 'AI-Built Research...', date: 'Jul 2025', views: 13, clips: 17, hits: 0 },
-            { title: 'Dynamic Duo: Tools...', date: 'Aug 2025', views: 3, clips: 0, hits: 1923 }
+            { title: 'An Ocean of Possibilities', date: 'Sep 2022', views: 4, clips: 0, hits: 2994 },
+            { title: 'Machine Learning Enables...', date: 'Oct 2022', views: 6, clips: 12, hits: 3615 },
+            { title: 'New CZI AI Model...', date: 'Jul 2025', views: 9, clips: 12, hits: 6316 },
+            { title: 'AI-Built Research...', date: 'Jul 2025', views: 13, clips: 5, hits: 762 },
+            { title: 'Dynamic Duo: Tools...', date: 'Aug 2025', views: 3, clips: 17, hits: 1923 }
         ];
 
         // 3D Bar Chart with Colorful Bars and Data Labels
@@ -3423,7 +3447,7 @@
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Media Outlet Views (35)', 'Media Clips (34)', 'Total Hits (2,685)'],
+                    labels: ['Media Outlet Views (35)', 'Media Clips (34)', 'Total Hits (15,610)'],
                     datasets: [
                         // Shadow layer
                         {
@@ -3479,7 +3503,7 @@
                                 boxHeight: 15,
                                 generateLabels: function (chart) {
                                     const data = chart.data;
-                                    const actualValues = [35, 34, 2685];
+                                    const actualValues = [35, 34, 15610];
                                     const labelNames = ['Media Outlet Views', 'Media Clips', 'Total Hits'];
                                     const isLight = document.body.classList.contains('light-mode');
                                     return labelNames.map((label, i) => ({
@@ -3509,7 +3533,7 @@
                             },
                             callbacks: {
                                 label: function (context) {
-                                    const actualValues = [35, 34, 2685];
+                                    const actualValues = [35, 34, 15610];
                                     const labelNames = ['Media Outlet Views', 'Media Clips', 'Total Hits'];
                                     return `${labelNames[context.dataIndex]}: ${actualValues[context.dataIndex].toLocaleString()}`;
                                 }
