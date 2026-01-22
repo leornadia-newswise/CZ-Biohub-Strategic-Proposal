@@ -1508,6 +1508,225 @@
             background: linear-gradient(145deg, #06b6d4 0%, #0891b2 100%);
         }
 
+
+        /* Methodology & Definitions */
+        .methodology-section {
+            position: relative;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .methodology-card {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 20px;
+            padding: 2.25rem;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 12px 24px -8px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .methodology-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        .methodology-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(220, 38, 38, 0.25);
+            box-shadow:
+                0 35px 70px -15px rgba(0, 0, 0, 0.6),
+                0 20px 40px -10px rgba(220, 38, 38, 0.12);
+        }
+
+        .methodology-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .methodology-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .methodology-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .methodology-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red-light);
+            font-weight: 800;
+            text-shadow: 0 0 12px var(--glow-red);
+        }
+
+        .methodology-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .methodology-card.highlight {
+            background: linear-gradient(145deg, rgba(220, 38, 38, 0.18) 0%, rgba(18, 18, 18, 0.98) 55%, rgba(18, 18, 18, 0.98) 100%);
+            border: 1px solid rgba(220, 38, 38, 0.25);
+        }
+
+        .methodology-card.highlight p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .methodology-bullets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.25rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.92);
+            background: rgba(220, 38, 38, 0.18);
+            border: 1px solid rgba(220, 38, 38, 0.25);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        body.light-mode .methodology-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+
+        body.light-mode .methodology-card h3 {
+            color: #1e293b;
+        }
+
+        body.light-mode .methodology-card li {
+            color: #64748b;
+        }
+
+        body.light-mode .methodology-note {
+            color: #94a3b8;
+        }
+
+        body.light-mode .pill {
+            color: #1e293b;
+            background: rgba(220, 38, 38, 0.08);
+            border: 1px solid rgba(220, 38, 38, 0.18);
+        }
+
+        /* Clips Controls */
+        .clips-controls {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            gap: 1.25rem;
+            margin: 1.75rem auto 0;
+            max-width: 1200px;
+            padding: 1.5rem;
+            border-radius: 18px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--glass-border);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        body.light-mode .clips-controls {
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .clips-control label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.55rem;
+        }
+
+        body.light-mode .clips-control label {
+            color: #64748b;
+        }
+
+        .clips-control input,
+        .clips-control select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(20, 20, 20, 0.9);
+            color: var(--text-primary);
+            outline: none;
+            transition: all 0.25s ease;
+            font-weight: 600;
+        }
+
+        .clips-control input:focus,
+        .clips-control select:focus {
+            border-color: rgba(220, 38, 38, 0.35);
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+        }
+
+        body.light-mode .clips-control input,
+        body.light-mode .clips-control select {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            color: #1e293b;
+        }
+
+        .clips-meta {
+            grid-column: 1 / -1;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+            padding-top: 0.25rem;
+        }
+
+        body.light-mode .clips-meta {
+            color: #64748b;
+        }
+
+        @media (max-width: 900px) {
+            .clips-controls {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Growth Section */
         .growth-section {
             position: relative;
@@ -2221,6 +2440,7 @@
         <div class="nav-brand"></div>
         <ul class="nav-links">
             <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#methodology">Methodology</a></li>
             <li><a href="#clips">Media Clips</a></li>
             <li><a href="#performance">Performance</a></li>
             <li><a href="#timeline">Timeline</a></li>
@@ -2373,16 +2593,87 @@
         </div>
     </section>
 
+
+    <!-- Methodology & Definitions -->
+    <section class="methodology-section" id="methodology">
+        <h2 class="section-title">Methodology & Definitions</h2>
+        <div class="methodology-grid">
+            <div class="methodology-card">
+                <h3>What this report includes</h3>
+                <ul>
+                    <li><strong>Scope:</strong> Articles distributed via Newswise for Chan Zuckerberg Biohub, with engagement tracked from publication through the report date.</li>
+                    <li><strong>Time window shown:</strong> September 2022 – August 2025 (based on the 5 distributed articles in this report).</li>
+                    <li><strong>Why the “gap” matters:</strong> Long periods without distribution reduce the probability of sustained journalist awareness and repeat pickup.</li>
+                </ul>
+            </div>
+
+            <div class="methodology-card">
+                <h3>Metric definitions (in plain language)</h3>
+                <ul>
+                    <li><strong>Articles Published:</strong> News releases / stories distributed through Newswise (not total content on CZ Biohub’s website).</li>
+                    <li><strong>Media Outlet Views:</strong> Count of verified newsroom / outlet views inside the Newswise media network for each distributed article.</li>
+                    <li><strong>Media Clips:</strong> Count of earned pickup items captured as clips for those Newswise-distributed articles (when a clip is available).</li>
+                    <li><strong>Total Hits:</strong> Total measured interactions (e.g., clicks / engagements) attributed to the Newswise distribution pages and tracked destinations.</li>
+                </ul>
+                <p class="methodology-note">These metrics are specific to Newswise distribution activity and are not a full-site analytics replacement.</p>
+            </div>
+
+            <div class="methodology-card highlight">
+                <h3>What “consistent usage” means</h3>
+                <p>
+                    When we reference “consistent usage,” we mean a regular cadence of distribution (e.g., monthly or
+                    around major research moments) plus light optimization: targeting, timing, and stronger expert
+                    visibility.
+                </p>
+                <div class="methodology-bullets">
+                    <span class="pill">Cadence</span>
+                    <span class="pill">Targeting</span>
+                    <span class="pill">Expert visibility</span>
+                    <span class="pill">Follow-up</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Media Clips Section -->
     <section class="media-clips-section" id="clips">
         <h2 class="section-title">Media Clips</h2>
         <p class="media-clips-intro">List of the 34 earned media clips generated through Newswise distribution.</p>
+        <div class="clips-controls">
+            <div class="clips-control">
+                <label for="clipSearch">Search clips</label>
+                <input id="clipSearch" type="search" placeholder="Search by outlet name…" autocomplete="off" />
+            </div>
+
+            <div class="clips-control">
+                <label for="clipFilter">Filter</label>
+                <select id="clipFilter">
+                    <option value="all" selected>All clips</option>
+                    <option value="with-link">With link</option>
+                    <option value="no-link">No link provided</option>
+                    <option value="top-outlets">Top outlets only</option>
+                </select>
+            </div>
+
+            <div class="clips-control">
+                <label for="clipSort">Sort</label>
+                <select id="clipSort">
+                    <option value="original" selected>Original order</option>
+                    <option value="az">Outlet A–Z</option>
+                    <option value="za">Outlet Z–A</option>
+                    <option value="domain">Group by domain</option>
+                </select>
+            </div>
+
+            <div class="clips-meta" id="clipsMeta">Showing all clips</div>
+        </div>
+
         <div class="media-clips-card">
             <div class="media-clips-header">
                 <span class="media-clips-count">34 Clips</span>
                 <span class="media-clips-note">Full list</span>
             </div>
-            <div class="media-clips-list">
+            <div class="media-clips-list" id="clipsGrid">
                 <a class="media-tag red" href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBhcVJZSjRrVjlOZzVraVdraXhXOUZOTlN0Nmx4MTMwY2I3cVJkRS1XbVUxZUxQc3VWTzJfQVRYclZ3UVdCNzVlZzNlUjJkRm9tVEhWUFZtajlhMG5hU3ZGQ3hmb3JEbUtJVVpr?oc=5" target="_blank" rel="noopener" title="Introducing GREmLN, CZI?s New AI Model (10-Jul 00:00:00 ET)">Chan Zuckerberg Initiative</a>
                 <a class="media-tag dark-red" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVHZJOENGOVpDVU5DWTNGeUswQzlPQlRHaFNQREp6eF9hcFhrTzNReWQ2Z1VnX3ZYOE9NM185aTJHd2xhWU1mdmc5R0tQUFlSay1OYllaNmpYQ001U1ZKSkNOdHAwRXdMLUlzbDdraWFMM3JjOG1wMmNBNGx2aWZTeXFGY2ttMmlEQ2hKSklFb3BaTTFjZ3J2LTh4N3BZenNNMXhKRkVKaDhCR0xjOUVsOHZlTHYxN2dzWWtj?oc=5" target="_blank" rel="noopener" title="Chan Zuckerberg Initiative Introduces New GREmLN Model For Genetics (24-Jul 00:00:00 ET)">Forbes</a>
                 <a class="media-tag white" href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxQRmRqM1VocUpGMENmWm5wNDhpUlMzQ2Y2aHV6Mng0NGVOcmEtSWkxLWo5YjhvajZMb0syZVlYYXdIRTBQTHJzbHFaeXhKR0lxS05BcU5EcnA3OWU1WmpkekRZb1ItV0RHZF83c0Z1QWVtMWVLS3gzNFFvWEgyUWtTZ1ZVLVJWU0lxNFQ4NmN0bXJUaTVLX05oWlBjNnF1VzA5S0tSSjdXY1lNNXdUTVVld0dHV244eDNmVnF6Y2gwRlZHUDJYTXExTThkLXkzdVJNT1ZV?oc=5" target="_blank" rel="noopener" title="Chan Zuckerberg Initiative?s AI Model Captures Gene Networks to Address Disease (10-Jul 00:00:00 ET)">Genetic Engineering and Biotechnology News</a>
@@ -2586,6 +2877,9 @@
                 <strong>What we recommend next:</strong> CZ Biohub has strong results when active — but publishing has been
                 intermittent. The fastest path to more coverage is a consistent cadence (1–2 stories/month), paired with
                 targeted pitching and expert visibility.
+            
+                <br><br>
+                <span class="highlight-text">CZ Biohub already publishes stories on its website and maintains investigator profiles; Newswise can convert these moments into broader coverage with distribution and expert-forward pitching.</span>
             </p>
             <p style="margin-top:0.75rem; font-size:0.98rem; opacity:0.95;">
                 Content ideas already present on CZ Biohub’s site that can be distributed and pitched include research
@@ -2768,9 +3062,8 @@
         <div class="comparison-note">
             <span class="mini">
                 <strong>Notes:</strong> “Media Views” = unique media outlets that viewed the release in Newswise.
-                CZ Biohub also generated <strong>34 earned media clips</strong> from these stories.
-                (The anonymized partner report tracks articles/views and period lifts; clips were not presented as a KPI.)
-            </span>
+                This comparison focuses on publishing cadence and media visibility (articles, views, and active months) to mirror the anonymized partner’s KPIs.
+                </span>
         </div>
 
         <div class="comparison-insight">
@@ -2856,6 +3149,103 @@
 
                 requestAnimationFrame(updateCounter);
             });
+        }
+
+
+        // Clips Explorer: search / filter / sort (keeps original design while improving clarity)
+        function setupClipsExplorer() {
+            const grid = document.getElementById('clipsGrid');
+            const search = document.getElementById('clipSearch');
+            const filter = document.getElementById('clipFilter');
+            const sort = document.getElementById('clipSort');
+            const meta = document.getElementById('clipsMeta');
+
+            if (!grid || !search || !filter || !sort || !meta) return;
+
+            // Capture original order so "Original order" is deterministic
+            const originalItems = Array.from(grid.querySelectorAll('.media-tag'));
+            originalItems.forEach((el, idx) => el.dataset.originalIndex = String(idx));
+
+            // Enrich items with domain + title for filtering/sorting
+            originalItems.forEach(el => {
+                const title = (el.textContent || '').trim();
+                el.dataset.title = title.toLowerCase();
+
+                const href = el.getAttribute('href') || '';
+                el.dataset.hasLink = href.startsWith('http') ? 'true' : 'false';
+
+                try {
+                    const u = new URL(href);
+                    el.dataset.domain = (u.hostname || '').replace(/^www\./, '').toLowerCase();
+                } catch (e) {
+                    el.dataset.domain = '';
+                }
+            });
+
+            function apply() {
+                const q = (search.value || '').trim().toLowerCase();
+                const f = filter.value;
+                const s = sort.value;
+
+                let items = Array.from(grid.querySelectorAll('.media-tag'));
+
+                // Filter
+                items.forEach(el => {
+                    const title = el.dataset.title || '';
+                    const domain = el.dataset.domain || '';
+                    const hasLink = el.dataset.hasLink === 'true';
+
+                    let visible = true;
+
+                    if (q) {
+                        visible = title.includes(q) || domain.includes(q);
+                    }
+
+                    if (visible && f === 'with-link') visible = hasLink;
+                    if (visible && f === 'no-link') visible = !hasLink;
+                    if (visible && f === 'top-outlets') {
+                        // Curated: keep well-known / high-impact outlets from the list
+                        const topList = [
+                            'the atlantic', 'genomeweb', 'biorxiv', 'nature', 'science', 'stat', 'nih', 'cdc',
+                            'associated press', 'reuters', 'bbc', 'npr'
+                        ];
+                        visible = topList.some(t => title.includes(t));
+                    }
+
+                    el.style.display = visible ? 'inline-block' : 'none';
+                });
+
+                // Sort (only visible items are re-ordered; hidden items stay hidden)
+                let visibleItems = items.filter(el => el.style.display !== 'none');
+
+                const byTitle = (a, b) => (a.dataset.title || '').localeCompare(b.dataset.title || '');
+                const byDomain = (a, b) => (a.dataset.domain || '').localeCompare(b.dataset.domain || '');
+                const byOriginal = (a, b) => Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex);
+
+                if (s === 'az') visibleItems.sort(byTitle);
+                else if (s === 'za') visibleItems.sort((a, b) => byTitle(b, a));
+                else if (s === 'domain') visibleItems.sort((a, b) => byDomain(a, b) || byTitle(a, b));
+                else visibleItems.sort(byOriginal);
+
+                // Re-append in sorted order (keeps layout intact)
+                visibleItems.forEach(el => grid.appendChild(el));
+
+                // Update meta
+                const total = originalItems.length;
+                const shown = visibleItems.length;
+                meta.textContent = (q || f !== 'all' || s !== 'original')
+                    ? `Showing ${shown} of ${total} clips`
+                    : `Showing all clips (${total})`;
+            }
+
+            // Bind
+            ['input', 'change'].forEach(evt => {
+                search.addEventListener(evt, apply);
+                filter.addEventListener(evt, apply);
+                sort.addEventListener(evt, apply);
+            });
+
+            apply();
         }
 
         // Chart.js Configuration - Colorful Theme
@@ -3407,6 +3797,7 @@
             createOutletViewsChart();
             createEngagementChart();
             createTimelineChart();
+            setupClipsExplorer();
         }
 
         function initTheme() {
