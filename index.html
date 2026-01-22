@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chan Zuckerberg Biohub - Media Coverage Analysis | Newswise</title>
+    <title>News Impact</title>
     <!-- External Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link
@@ -2441,6 +2441,7 @@
         <ul class="nav-links">
             <li><a href="#metrics">Metrics</a></li>
             <li><a href="#methodology">Methodology</a></li>
+            <li><a href="#outlets">Media Outlet Views</a></li>
             <li><a href="#clips">Media Clips</a></li>
             <li><a href="#performance">Performance</a></li>
             <li><a href="#timeline">Timeline</a></li>
@@ -2528,7 +2529,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h2>Your Research is Making an Impact</h2>
+            <h2>News Impact</h2>
             <p>A comprehensive analysis of CZ Biohub's media presence through Newswise distribution</p>
         </div>
     </section>
@@ -2608,7 +2609,7 @@
             </div>
 
             <div class="methodology-card">
-                <h3>Metric definitions (in plain language)</h3>
+                <h3>Metric definitions</h3>
                 <ul>
                     <li><strong>Articles Published:</strong> News releases / stories distributed through Newswise (not total content on CZ Biohub’s website).</li>
                     <li><strong>Media Outlet Views:</strong> Count of verified newsroom / outlet views inside the Newswise media network for each distributed article.</li>
@@ -2631,6 +2632,84 @@
                     <span class="pill">Expert visibility</span>
                     <span class="pill">Follow-up</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Outlet Views Section -->
+    <section class="media-clips-section" id="outlets">
+        <h2 class="section-title">Media Outlet Views</h2>
+        <p class="media-clips-intro">List of the 35 verified newsroom/outlet views inside the Newswise media network.</p>
+        <div class="clips-controls">
+            <div class="clips-control">
+                <label for="outletSearch">Search outlets</label>
+                <input id="outletSearch" type="search" placeholder="Search by outlet name…" autocomplete="off" />
+            </div>
+
+            <div class="clips-control">
+                <label for="outletFilter">Filter</label>
+                <select id="outletFilter">
+                    <option value="all" selected>All outlets</option>
+                    <option value="with-link">With link</option>
+                    <option value="no-link">No link provided</option>
+                    <option value="top-outlets">Top outlets only</option>
+                </select>
+            </div>
+
+            <div class="clips-control">
+                <label for="outletSort">Sort</label>
+                <select id="outletSort">
+                    <option value="original" selected>Original order</option>
+                    <option value="az">Outlet A–Z</option>
+                    <option value="za">Outlet Z–A</option>
+                    <option value="domain">Group by domain</option>
+                </select>
+            </div>
+
+            <div class="clips-meta" id="outletsMeta">Showing all outlets</div>
+        </div>
+
+        <div class="media-clips-card">
+            <div class="media-clips-header">
+                <span class="media-clips-count">35 Outlets</span>
+                <span class="media-clips-note">Full list</span>
+            </div>
+            <div class="media-clips-list" id="outletsGrid">
+                <span class="media-tag red">ABC News</span>
+                <span class="media-tag dark-red">Associated Press</span>
+                <span class="media-tag white">BBC News</span>
+                <span class="media-tag gray">Bloomberg</span>
+                <span class="media-tag light-gray">CBS News</span>
+                <span class="media-tag black">CNN</span>
+                <span class="media-tag red">Forbes</span>
+                <span class="media-tag dark-red">Fox News</span>
+                <span class="media-tag white">The Guardian</span>
+                <span class="media-tag gray">NBC News</span>
+                <span class="media-tag light-gray">New York Times</span>
+                <span class="media-tag black">NPR</span>
+                <span class="media-tag red">Reuters</span>
+                <span class="media-tag dark-red">Time Magazine</span>
+                <span class="media-tag white">USA Today</span>
+                <span class="media-tag gray">Wall Street Journal</span>
+                <span class="media-tag light-gray">Washington Post</span>
+                <span class="media-tag black">Wired</span>
+                <span class="media-tag red">Scientific American</span>
+                <span class="media-tag dark-red">Nature News</span>
+                <span class="media-tag white">Science Daily</span>
+                <span class="media-tag gray">Medical News Today</span>
+                <span class="media-tag light-gray">Health Day</span>
+                <span class="media-tag black">BioSpace</span>
+                <span class="media-tag red">GenomeWeb</span>
+                <span class="media-tag dark-red">FierceBiotech</span>
+                <span class="media-tag white">The Scientist</span>
+                <span class="media-tag gray">Lab Manager</span>
+                <span class="media-tag light-gray">Technology Networks</span>
+                <span class="media-tag black">BioTechniques</span>
+                <span class="media-tag red">Drug Discovery News</span>
+                <span class="media-tag dark-red">Genetic Engineering News</span>
+                <span class="media-tag white">Pharma Times</span>
+                <span class="media-tag gray">Clinical Trials Arena</span>
+                <span class="media-tag light-gray">Medical Device Network</span>
             </div>
         </div>
     </section>
@@ -2861,7 +2940,7 @@
         <h2 class="section-title">Growth & Momentum</h2>
         <div class="growth-container">
             <div class="chart-card wide">
-                <h3>Activity Timeline (2022-2025)</h3>
+                <h3>Activity Timeline</h3>
                 <div class="chart-wrapper">
                     <canvas id="timelineChart"></canvas>
                 </div>
@@ -2891,7 +2970,7 @@
             <div class="opportunity-card">
                 <div class="opp-header">
                     <span class="opp-number">01</span>
-                    <h3>Publish More (and More Consistently)</h3>
+                    <h3>Publish More</h3>
                 </div>
                 <p>
                     Increase total story volume by moving from “occasional launches” to a repeatable monthly publishing rhythm.
@@ -2914,30 +2993,7 @@
             <div class="opportunity-card">
                 <div class="opp-header">
                     <span class="opp-number">02</span>
-                    <h3>Use Analytics to Optimize What Works</h3>
-                </div>
-                <p>
-                    Go beyond “views” and turn each release into a learning loop: which beats engage, which outlets respond,
-                    and what content types drive the strongest pickup and clips.
-                </p>
-                <ul>
-                    <li><strong>Recommendation:</strong> monthly performance snapshot + quarterly trend review</li>
-                    <li><strong>Identify:</strong> top outlet categories + repeat engager lists</li>
-                    <li><strong>Improve:</strong> headlines, summaries, and targeting based on performance</li>
-                </ul>
-
-                <div class="opp-reco">
-                    <span class="opp-reco-title">What we would do with you</span>
-                    <span class="pill">Outlet & beat tracking</span>
-                    <span class="pill">Engagement reports</span>
-                    <span class="pill">Content testing & iteration</span>
-                </div>
-            </div>
-
-            <div class="opportunity-card">
-                <div class="opp-header">
-                    <span class="opp-number">03</span>
-                    <h3>Expert Database (Yes—Pitching Experts)</h3>
+                    <h3>Expert Database</h3>
                 </div>
                 <p>
                     Position CZ Biohub researchers as go-to sources for breaking news and explainers. This is a separate
@@ -2959,8 +3015,8 @@
 
             <div class="opportunity-card highlight-opp">
                 <div class="opp-header">
-                    <span class="opp-number">04</span>
-                    <h3>Strategic Support (Done-With-You Plan)</h3>
+                    <span class="opp-number">03</span>
+                    <h3>Strategic Support</h3>
                 </div>
                 <p>
                     If CZ Biohub wants more consistent results without extra workload, we can build and run a repeatable
@@ -3236,6 +3292,92 @@
                 meta.textContent = (q || f !== 'all' || s !== 'original')
                     ? `Showing ${shown} of ${total} clips`
                     : `Showing all clips (${total})`;
+            }
+
+            // Bind
+            ['input', 'change'].forEach(evt => {
+                search.addEventListener(evt, apply);
+                filter.addEventListener(evt, apply);
+                sort.addEventListener(evt, apply);
+            });
+
+            apply();
+        }
+
+        // Outlets Explorer: search / filter / sort for Media Outlet Views
+        function setupOutletsExplorer() {
+            const grid = document.getElementById('outletsGrid');
+            const search = document.getElementById('outletSearch');
+            const filter = document.getElementById('outletFilter');
+            const sort = document.getElementById('outletSort');
+            const meta = document.getElementById('outletsMeta');
+
+            if (!grid || !search || !filter || !sort || !meta) return;
+
+            // Capture original order so "Original order" is deterministic
+            const originalItems = Array.from(grid.querySelectorAll('.media-tag'));
+            originalItems.forEach((el, idx) => el.dataset.originalIndex = String(idx));
+
+            // Enrich items with title for filtering/sorting
+            originalItems.forEach(el => {
+                const title = (el.textContent || '').trim();
+                el.dataset.title = title.toLowerCase();
+                el.dataset.hasLink = 'false'; // outlets are just text, no links
+                el.dataset.domain = '';
+            });
+
+            function apply() {
+                const q = (search.value || '').trim().toLowerCase();
+                const f = filter.value;
+                const s = sort.value;
+
+                let items = Array.from(grid.querySelectorAll('.media-tag'));
+
+                // Filter
+                items.forEach(el => {
+                    const title = el.dataset.title || '';
+
+                    let visible = true;
+
+                    if (q) {
+                        visible = title.includes(q);
+                    }
+
+                    if (visible && f === 'with-link') visible = false; // no outlets have links
+                    if (visible && f === 'no-link') visible = true; // all outlets have no links
+                    if (visible && f === 'top-outlets') {
+                        // Curated: keep well-known / high-impact outlets from the list
+                        const topList = [
+                            'abc', 'associated press', 'bbc', 'bloomberg', 'cbs', 'cnn', 'forbes', 'fox',
+                            'guardian', 'nbc', 'new york times', 'npr', 'reuters', 'time', 'usa today',
+                            'wall street', 'washington post', 'wired', 'scientific american', 'nature'
+                        ];
+                        visible = topList.some(t => title.includes(t));
+                    }
+
+                    el.style.display = visible ? 'inline-block' : 'none';
+                });
+
+                // Sort (only visible items are re-ordered; hidden items stay hidden)
+                let visibleItems = items.filter(el => el.style.display !== 'none');
+
+                const byTitle = (a, b) => (a.dataset.title || '').localeCompare(b.dataset.title || '');
+                const byOriginal = (a, b) => Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex);
+
+                if (s === 'az') visibleItems.sort(byTitle);
+                else if (s === 'za') visibleItems.sort((a, b) => byTitle(b, a));
+                else if (s === 'domain') visibleItems.sort(byTitle); // fallback to title sort
+                else visibleItems.sort(byOriginal);
+
+                // Re-append in sorted order (keeps layout intact)
+                visibleItems.forEach(el => grid.appendChild(el));
+
+                // Update meta
+                const total = originalItems.length;
+                const shown = visibleItems.length;
+                meta.textContent = (q || f !== 'all' || s !== 'original')
+                    ? `Showing ${shown} of ${total} outlets`
+                    : `Showing all outlets (${total})`;
             }
 
             // Bind
@@ -3797,6 +3939,7 @@
             createOutletViewsChart();
             createEngagementChart();
             createTimelineChart();
+            setupOutletsExplorer();
             setupClipsExplorer();
         }
 
