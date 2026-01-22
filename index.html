@@ -100,7 +100,8 @@
         body.light-mode .timeline-content,
         body.light-mode .insight-card,
         body.light-mode .opportunity-card,
-        body.light-mode .comparison-card {
+        body.light-mode .comparison-card,
+        body.light-mode .media-clips-card {
             background: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.06);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.04);
@@ -109,7 +110,8 @@
         body.light-mode .metric-card:hover,
         body.light-mode .chart-card:hover,
         body.light-mode .insight-card:hover,
-        body.light-mode .opportunity-card:hover {
+        body.light-mode .opportunity-card:hover,
+        body.light-mode .media-clips-card:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 16px 48px rgba(0, 0, 0, 0.06);
             border-color: rgba(220, 38, 38, 0.2);
         }
@@ -258,6 +260,16 @@
 
         body.light-mode .media-label {
             color: #94a3b8;
+        }
+
+        body.light-mode .media-clips-count {
+            background: rgba(220, 38, 38, 0.08);
+            border-color: rgba(220, 38, 38, 0.2);
+            color: #b91c1c;
+        }
+
+        body.light-mode .media-clips-note {
+            color: #64748b;
         }
 
         body.light-mode .cta-section {
@@ -504,7 +516,6 @@
             right: 0;
             bottom: 0;
             background-color: #0F172A;
-            /* Dark mode track */
             border-radius: 30px;
             transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
@@ -529,10 +540,8 @@
             height: 14px;
         }
 
-        /* Default Dark Mode Track Icons */
         .sun-icon {
             color: #64748B;
-            /* Dimmed Sun on track */
             opacity: 1;
             transform: scale(1);
         }
@@ -540,7 +549,6 @@
         .moon-icon {
             color: #64748B;
             opacity: 0;
-            /* Hidden under knob initially */
             transform: scale(0.5);
         }
 
@@ -551,7 +559,6 @@
             width: 24px;
             height: 24px;
             background-color: #1E293B;
-            /* Dark mode knob */
             border-radius: 50%;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
             display: flex;
@@ -559,7 +566,6 @@
             justify-content: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
             transform: translateX(30px);
-            /* Start at right for dark mode */
         }
 
         .knob-icon {
@@ -575,7 +581,6 @@
             height: 14px;
         }
 
-        /* Default Dark Mode Knob Icons */
         .sun-knob-icon {
             opacity: 0;
             transform: scale(0.5) rotate(-90deg);
@@ -586,25 +591,19 @@
             opacity: 1;
             transform: scale(1) rotate(0);
             color: #F8FAFC;
-            /* White Moon in knob */
         }
 
-        /* LIGHT MODE STATES */
         body.light-mode .toggle-track {
             background-color: #F1F5F9;
-            /* Light mode track */
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         body.light-mode .toggle-knob {
             transform: translateX(0);
-            /* Move to left */
             background-color: #FFFFFF;
-            /* Light mode knob */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Light Mode Track Icons */
         body.light-mode .sun-icon {
             opacity: 0;
             transform: scale(0.5);
@@ -614,15 +613,12 @@
             opacity: 1;
             transform: scale(1);
             color: #94A3B8;
-            /* Visible Moon on track */
         }
 
-        /* Light Mode Knob Icons */
         body.light-mode .sun-knob-icon {
             opacity: 1;
             transform: scale(1) rotate(0);
             color: #1E293B;
-            /* Dark Sun in knob */
         }
 
         body.light-mode .moon-knob-icon {
@@ -631,7 +627,6 @@
             color: #94A3B8;
         }
 
-        /* Hover Effects */
         .theme-toggle:hover .toggle-knob {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
@@ -739,7 +734,7 @@
             position: relative;
             background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #7f1d1d 100%);
             color: white;
-            padding: 6rem 2rem;
+            padding: 2.25rem 2rem;
             text-align: center;
             overflow: hidden;
         }
@@ -1029,6 +1024,98 @@
             color: rgba(255, 255, 255, 0.75);
         }
 
+        /* Media Clips Section */
+        .media-clips-section {
+            position: relative;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .media-clips-intro {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .media-clips-card {
+            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 15px 30px -10px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .media-clips-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 50%, transparent 100%);
+        }
+
+        .media-clips-card:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 40px 80px -20px rgba(0, 0, 0, 0.6),
+                0 25px 50px -15px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.25);
+        }
+
+        .media-clips-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .media-clips-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.1rem;
+            border-radius: 999px;
+            background: rgba(220, 38, 38, 0.15);
+            color: var(--primary-red-light);
+            font-weight: 600;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        .media-clips-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .media-clips-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .media-clips-list .media-tag {
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 0.45rem 0.75rem;
+        }
+
         /* Performance Section */
         .performance-section {
             position: relative;
@@ -1119,7 +1206,6 @@
             grid-column: 1 / -1;
         }
 
-        /* Chart Container Styling */
         .chart-wrapper {
             position: relative;
             padding: 1rem;
@@ -1383,6 +1469,7 @@
             font-size: 0.8rem;
             font-weight: 500;
             color: white;
+            text-decoration: none;
             transition: all 0.3s ease;
             box-shadow:
                 0 4px 12px rgba(0, 0, 0, 0.3),
@@ -1444,94 +1531,6 @@
             margin: 0 auto 3rem;
         }
 
-        .growth-insights {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            perspective: 1000px;
-        }
-
-        .insight-card {
-            background: linear-gradient(145deg, rgba(28, 28, 28, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
-            border-radius: 20px;
-            padding: 2.25rem;
-            text-align: center;
-            border: 1px solid var(--glass-border);
-            box-shadow:
-                0 20px 40px -10px rgba(0, 0, 0, 0.4),
-                0 10px 20px -5px rgba(0, 0, 0, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.03) inset,
-                0 1px 0 rgba(255, 255, 255, 0.05) inset;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .insight-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
-        }
-
-        .insight-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow:
-                0 30px 60px -15px rgba(0, 0, 0, 0.5),
-                0 20px 40px -10px rgba(220, 38, 38, 0.15);
-            border-color: rgba(220, 38, 38, 0.3);
-        }
-
-        .insight-card:nth-child(1):hover {
-            border-color: rgba(236, 72, 153, 0.5);
-        }
-
-        .insight-card:nth-child(2):hover {
-            border-color: rgba(34, 197, 94, 0.5);
-        }
-
-        .insight-card:nth-child(3):hover {
-            border-color: rgba(59, 130, 246, 0.5);
-        }
-
-        .insight-icon {
-            font-size: 3rem;
-            margin-bottom: 1.25rem;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-            display: inline-block;
-        }
-
-        .insight-card:nth-child(1) .insight-icon {
-            filter: drop-shadow(0 4px 12px rgba(236, 72, 153, 0.4));
-        }
-
-        .insight-card:nth-child(2) .insight-icon {
-            filter: drop-shadow(0 4px 12px rgba(34, 197, 94, 0.4));
-        }
-
-        .insight-card:nth-child(3) .insight-icon {
-            filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
-        }
-
-        .insight-card h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--pure-white);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
-        }
-
-        .insight-card p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
         /* Opportunity Section */
         .opportunity-section {
             position: relative;
@@ -1541,7 +1540,7 @@
 
         .opportunity-intro {
             text-align: center;
-            max-width: 700px;
+            max-width: 850px;
             margin: 0 auto 3rem;
             font-size: 1.15rem;
             color: var(--text-secondary);
@@ -1625,26 +1624,11 @@
             letter-spacing: -0.05em;
         }
 
-        .opportunity-card:nth-child(1) .opp-number {
-            color: #3b82f6;
-        }
-
-        .opportunity-card:nth-child(2) .opp-number {
-            color: #8b5cf6;
-        }
-
-        .opportunity-card:nth-child(3) .opp-number {
-            color: #14b8a6;
-        }
-
-        .opportunity-card:nth-child(4) .opp-number {
-            color: #f97316;
-        }
-
-        .highlight-opp .opp-number {
-            color: white;
-            opacity: 0.4;
-        }
+        .opportunity-card:nth-child(1) .opp-number { color: #3b82f6; }
+        .opportunity-card:nth-child(2) .opp-number { color: #8b5cf6; }
+        .opportunity-card:nth-child(3) .opp-number { color: #14b8a6; }
+        .opportunity-card:nth-child(4) .opp-number { color: #f97316; }
+        .highlight-opp .opp-number { color: white; opacity: 0.4; }
 
         .opportunity-card h3 {
             font-size: 1.25rem;
@@ -1653,9 +1637,7 @@
             letter-spacing: -0.01em;
         }
 
-        .highlight-opp h3 {
-            color: white;
-        }
+        .highlight-opp h3 { color: white; }
 
         .opportunity-card p {
             font-size: 0.95rem;
@@ -1664,14 +1646,9 @@
             line-height: 1.7;
         }
 
-        .highlight-opp p {
-            color: rgba(255, 255, 255, 0.85);
-        }
+        .highlight-opp p { color: rgba(255, 255, 255, 0.85); }
 
-        .opportunity-card ul {
-            list-style: none;
-            padding: 0;
-        }
+        .opportunity-card ul { list-style: none; padding: 0; }
 
         .opportunity-card li {
             padding: 0.5rem 0;
@@ -1681,9 +1658,7 @@
             color: var(--text-secondary);
         }
 
-        .highlight-opp li {
-            color: rgba(255, 255, 255, 0.85);
-        }
+        .highlight-opp li { color: rgba(255, 255, 255, 0.85); }
 
         .opportunity-card li::before {
             content: '✓';
@@ -1697,6 +1672,53 @@
         .highlight-opp li::before {
             color: white;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* NEW: clearer recommendation styling */
+        .opp-reco {
+            margin-top: 1.1rem;
+            padding-top: 1.1rem;
+            border-top: 1px solid var(--border-dark);
+        }
+        .opp-reco-title{
+            display:block;
+            font-size:0.8rem;
+            font-weight:700;
+            color: var(--text-muted);
+            text-transform:uppercase;
+            letter-spacing:1px;
+            margin-bottom:0.6rem;
+        }
+        .opp-reco .pill{
+            display:inline-flex;
+            align-items:center;
+            gap:0.45rem;
+            padding:0.45rem 0.85rem;
+            border-radius:999px;
+            font-size:0.85rem;
+            font-weight:600;
+            border:1px solid rgba(255,255,255,0.10);
+            background: rgba(255,255,255,0.04);
+            color: var(--text-primary);
+            margin: 0 0.45rem 0.45rem 0;
+        }
+        body.light-mode .opp-reco .pill{
+            background: rgba(0,0,0,0.03);
+            border:1px solid rgba(0,0,0,0.08);
+            color:#1e293b;
+        }
+
+        .quickstart {
+            max-width: 950px;
+            margin: 2.5rem auto 0;
+        }
+        .quickstart .insight-highlight{
+            border-color: rgba(34, 197, 94, 0.55);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                        0 0 50px -15px rgba(34, 197, 94, 0.25);
+        }
+        .quickstart .insight-highlight strong{
+            color: rgba(34, 197, 94, 0.9);
         }
 
         /* Comparison Section */
@@ -1719,7 +1741,7 @@
 
         .comparison-intro {
             text-align: center;
-            max-width: 650px;
+            max-width: 760px;
             margin: 0 auto 3rem;
             font-size: 1.1rem;
             color: var(--text-secondary);
@@ -1765,9 +1787,7 @@
             background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
         }
 
-        .comparison-card:hover {
-            transform: translateY(-8px) rotateX(3deg);
-        }
+        .comparison-card:hover { transform: translateY(-8px) rotateX(3deg); }
 
         .comparison-card.current {
             border-color: var(--primary-red);
@@ -1833,9 +1853,7 @@
             margin: 0 -0.5rem;
         }
 
-        .comp-stat {
-            text-align: center;
-        }
+        .comp-stat { text-align: center; }
 
         .comp-value {
             display: block;
@@ -1848,11 +1866,6 @@
         }
 
         .potential .comp-value {
-            color: var(--success-green);
-            text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
-        }
-
-        .highlight-stat .comp-value {
             color: var(--success-green);
             text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
         }
@@ -1879,17 +1892,8 @@
         }
 
         @keyframes pulse-arrow {
-
-            0%,
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateX(10px);
-                opacity: 0.7;
-            }
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(10px); opacity: 0.7; }
         }
 
         .comparison-arrow p {
@@ -1918,12 +1922,10 @@
             border: 1px solid rgba(34, 197, 94, 0.2);
         }
 
-        .note-icon {
-            font-size: 1.1rem;
-        }
+        .note-icon { font-size: 1.1rem; }
 
         .comparison-insight {
-            max-width: 850px;
+            max-width: 920px;
             margin: 3.5rem auto 0;
         }
 
@@ -1967,6 +1969,28 @@
         .insight-highlight strong {
             color: var(--primary-red-light);
             font-weight: 700;
+        }
+
+        .comparison-note {
+            max-width: 920px;
+            margin: 1.25rem auto 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+        .comparison-note .mini {
+            display:inline-block;
+            margin-top:0.6rem;
+            padding:0.6rem 0.9rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+        }
+        body.light-mode .comparison-note .mini{
+            background: rgba(0,0,0,0.03);
+            border:1px solid rgba(0,0,0,0.08);
         }
 
         /* CTA Section */
@@ -2112,9 +2136,7 @@
             margin-top: 0.35rem;
         }
 
-        .footer-contact {
-            text-align: center;
-        }
+        .footer-contact { text-align: center; }
 
         .footer-contact p {
             font-size: 0.95rem;
@@ -2122,9 +2144,7 @@
             color: var(--text-secondary);
         }
 
-        .footer-contact strong {
-            color: var(--primary-red);
-        }
+        .footer-contact strong { color: var(--primary-red); }
 
         .footer-right {
             display: flex;
@@ -2136,7 +2156,6 @@
         .footer-right img {
             height: 52px;
             object-fit: contain;
-            /* Make Biohub logo white in footer (dark background) */
             filter: brightness(0) invert(1);
         }
 
@@ -2154,488 +2173,55 @@
             margin-top: 0.6rem;
         }
 
-        .footer-note p {
-            margin: 0.2rem 0;
-        }
+        .footer-note p { margin: 0.2rem 0; }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .logo-section {
-                align-items: center;
-            }
-
-            .header-right {
-                align-items: center;
-            }
-
-            .header-title h1 {
-                font-size: 1.6rem;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.05rem;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                padding: 2rem 0;
-            }
-
-            .timeline-item::before,
-            .timeline-item::after,
-            .timeline-track,
-            .timeline-progress {
-                display: none;
-            }
-
-            .timeline-date {
-                text-align: left;
-                display: flex;
-                gap: 0.6rem;
-                align-items: baseline;
-                padding-right: 0;
-            }
-
-            .timeline-content {
-                margin-left: 0;
-            }
-
-            .charts-container {
-                grid-template-columns: 1fr;
-            }
-
-            .comparison-grid {
-                flex-direction: column;
-            }
-
-            .comparison-card {
-                max-width: 100%;
-            }
-
-            .comparison-arrow {
-                transform: rotate(90deg);
-                padding: 1rem 0;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-note {
-                text-align: center;
-            }
-
-            .footer-right {
-                align-items: center;
-            }
-
-            .footer-left {
-                align-items: center;
-            }
-
-            .cta-content h2 {
-                font-size: 2rem;
-            }
-
-            .insight-highlight {
-                padding: 2rem 1.5rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes glow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 20px var(--glow-red);
-            }
-
-            50% {
-                box-shadow: 0 0 40px var(--glow-red);
-            }
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes borderGlow {
-
-            0%,
-            100% {
-                border-color: rgba(220, 38, 38, 0.3);
-            }
-
-            50% {
-                border-color: rgba(220, 38, 38, 0.8);
-            }
-        }
-
-        @keyframes textGlow {
-
-            0%,
-            100% {
-                text-shadow: 0 0 10px var(--glow-red);
-            }
-
-            50% {
-                text-shadow: 0 0 25px var(--glow-red), 0 0 40px var(--glow-red);
-            }
-        }
-
-        @keyframes slideInFromBottom {
-            from {
-                opacity: 0;
-                transform: translateY(50px) rotateX(-10deg);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) rotateX(0);
-            }
-        }
-
-        /* Enhanced Card Animations */
-        .metric-card,
-        .timeline-item,
-        .opportunity-card,
-        .insight-card,
-        .chart-card {
-            animation: slideInFromBottom 0.8s ease forwards;
-            opacity: 0;
-        }
-
-        .metric-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .metric-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .metric-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .metric-card:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        /* Hero Animation */
-        .hero-content {
-            animation: fadeInScale 1.2s ease-out forwards;
-        }
-
-        .hero h2 {
-            animation: fadeInUp 1s ease-out 0.3s forwards;
-            opacity: 0;
-        }
-
-        .hero p {
-            animation: fadeInUp 1s ease-out 0.5s forwards;
-            opacity: 0;
-        }
-
-        /* Section Title Animation */
-        .section-title {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .section-title::after {
-            animation: shimmer 3s linear infinite;
-            background-size: 200% 100%;
-        }
-
-        /* Enhanced Hover Effects */
-        .metric-card:hover .metric-icon {
-            animation: float 2s ease-in-out infinite;
-        }
-
-        .metric-card:hover .metric-value {
-            animation: textGlow 1.5s ease-in-out infinite;
-        }
-
-        .metric-card.highlight:hover {
-            animation: pulse 0.5s ease-in-out;
-        }
-
-        /* Timeline Hover Effects */
-        .timeline-content:hover {
-            border-color: rgba(220, 38, 38, 0.5);
-            animation: borderGlow 2s ease-in-out infinite;
-        }
-
-        .timeline-content:hover h3 {
-            color: var(--primary-red-light);
-            transition: color 0.3s ease;
-        }
-
-        /* Media Tag Hover */
-        .media-tag {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .media-tag:hover {
-            transform: translateY(-3px) scale(1.08);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Opportunity Card Hover */
-        .opportunity-card:hover h3 {
-            color: var(--primary-red-light);
-            transition: color 0.3s ease;
-        }
-
-        .opportunity-card:hover li::before {
-            animation: pulse 0.5s ease-in-out;
-        }
-
-        /* Insight Card Hover */
-        .insight-card:hover .insight-icon {
-            animation: float 2s ease-in-out infinite;
-            transform-origin: center;
-        }
-
-        .insight-card:hover h4 {
-            color: var(--primary-red-light);
-            transition: color 0.3s ease;
-        }
-
-        /* CTA Button Enhanced Hover */
-        .cta-button {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            letter-spacing: 0.05em;
-        }
-
-        /* Comparison Card Hover */
-        .comparison-card:hover {
-            box-shadow:
-                0 40px 80px -20px rgba(0, 0, 0, 0.6),
-                0 25px 50px -15px rgba(220, 38, 38, 0.2);
-        }
-
-        .comparison-card.potential:hover {
-            box-shadow:
-                0 40px 80px -20px rgba(0, 0, 0, 0.6),
-                0 25px 50px -15px rgba(34, 197, 94, 0.25);
-        }
-
-        .comparison-card:hover .comp-value {
-            animation: textGlow 1.5s ease-in-out infinite;
-        }
-
-        /* Chart Card Hover */
-        .chart-card:hover {
-            border-color: rgba(220, 38, 38, 0.4);
-        }
-
-        .chart-card:hover h3 {
-            color: var(--primary-red-light);
-            transition: color 0.3s ease;
-        }
-
-        /* Header Animation */
-        .header {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .header-title h1 {
-            animation: fadeInScale 0.8s ease-out 0.2s forwards;
-            opacity: 0;
-        }
-
-        /* Footer Hover Effects */
-        .footer-left img:hover,
-        .footer-right img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-
-        /* Stat Badge Hover */
-        .timeline-stats .stat:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(145deg, rgba(220, 38, 38, 0.25) 0%, rgba(220, 38, 38, 0.12) 100%);
-            transition: all 0.3s ease;
-        }
-
-        /* Insight Highlight Hover */
-        .insight-highlight:hover {
-            transform: translateY(-5px);
-            box-shadow:
-                0 40px 80px -20px rgba(0, 0, 0, 0.6),
-                0 0 80px -20px rgba(220, 38, 38, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Usage Note Hover */
-        .usage-note:hover {
-            transform: translateY(-2px);
-            transition: transform 0.3s ease;
-        }
-
-        /* Time Badge Hover */
-        .time-badge:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-
-        /* Report Date Animation */
-        .report-date {
-            animation: fadeInUp 0.8s ease-out 0.4s forwards;
-            opacity: 0;
-        }
-
-        /* Logo Hover Effects */
-        .logo-section img:hover,
-        .header-right img:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
-            transition: all 0.3s ease;
+            .header-content { flex-direction: column; text-align: center; }
+            .logo-section { align-items: center; }
+            .header-right { align-items: center; }
+            .header-title h1 { font-size: 1.6rem; }
+            .hero { padding: 2rem 1.5rem; }
+            .hero h2 { font-size: 2rem; }
+            .hero p { font-size: 1.05rem; }
+            .media-clips-card { padding: 2rem 1.5rem; }
+            .media-clips-list { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+            .section-title { font-size: 1.75rem; }
+            .timeline-item { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 0; }
+            .timeline-item::before, .timeline-item::after, .timeline-track, .timeline-progress { display: none; }
+            .timeline-date { text-align: left; display: flex; gap: 0.6rem; align-items: baseline; padding-right: 0; }
+            .timeline-content { margin-left: 0; }
+            .charts-container { grid-template-columns: 1fr; }
+            .comparison-grid { flex-direction: column; }
+            .comparison-card { max-width: 100%; }
+            .comparison-arrow { transform: rotate(90deg); padding: 1rem 0; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-note { text-align: center; }
+            .footer-right { align-items: center; }
+            .footer-left { align-items: center; }
+            .cta-content h2 { font-size: 2rem; }
+            .insight-highlight { padding: 2rem 1.5rem; }
         }
 
         /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-red-dark);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-red);
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--dark-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--primary-red-dark); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-red); }
     </style>
 </head>
 
-<body>
+<body class="light-mode">
     <!-- Navigation Menu -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
     <nav class="nav-menu">
-        <div class="nav-brand">
-        </div>
+        <div class="nav-brand"></div>
         <ul class="nav-links">
             <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#clips">Media Clips</a></li>
             <li><a href="#performance">Performance</a></li>
             <li><a href="#timeline">Timeline</a></li>
             <li><a href="#growth">Growth</a></li>
@@ -2662,7 +2248,7 @@
                     <div class="toggle-icon moon-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </div>
                 </div>
@@ -2684,15 +2270,13 @@
                     <div class="knob-icon moon-knob-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </div>
                 </div>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
@@ -2735,9 +2319,13 @@
         <div class="metrics-grid">
             <div class="metric-card highlight">
                 <div class="metric-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
-                        <path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                        <path d="M18 14h-8" />
+                        <path d="M15 18h-5" />
+                        <path d="M10 6h8v4h-8V6Z" />
                     </svg>
                 </div>
                 <div class="metric-value" data-count="5">0</div>
@@ -2746,9 +2334,10 @@
             </div>
             <div class="metric-card">
                 <div class="metric-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                        <circle cx="12" cy="12" r="3"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                        <circle cx="12" cy="12" r="3" />
                     </svg>
                 </div>
                 <div class="metric-value" data-count="35">0</div>
@@ -2757,9 +2346,10 @@
             </div>
             <div class="metric-card">
                 <div class="metric-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                     </svg>
                 </div>
                 <div class="metric-value" data-count="34">0</div>
@@ -2768,14 +2358,65 @@
             </div>
             <div class="metric-card">
                 <div class="metric-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 3v18h18"/>
-                        <path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v18h18" />
+                        <path d="M18 17V9" />
+                        <path d="M13 17V5" />
+                        <path d="M8 17v-3" />
                     </svg>
                 </div>
                 <div class="metric-value" data-count="15610">0</div>
                 <div class="metric-label">Total Hits</div>
                 <div class="metric-detail">Engagement Metrics</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Clips Section -->
+    <section class="media-clips-section" id="clips">
+        <h2 class="section-title">Media Clips</h2>
+        <p class="media-clips-intro">List of the 34 earned media clips generated through Newswise distribution.</p>
+        <div class="media-clips-card">
+            <div class="media-clips-header">
+                <span class="media-clips-count">34 Clips</span>
+                <span class="media-clips-note">Full list</span>
+            </div>
+            <div class="media-clips-list">
+                <a class="media-tag red" href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBhcVJZSjRrVjlOZzVraVdraXhXOUZOTlN0Nmx4MTMwY2I3cVJkRS1XbVUxZUxQc3VWTzJfQVRYclZ3UVdCNzVlZzNlUjJkRm9tVEhWUFZtajlhMG5hU3ZGQ3hmb3JEbUtJVVpr?oc=5" target="_blank" rel="noopener" title="Introducing GREmLN, CZI?s New AI Model (10-Jul 00:00:00 ET)">Chan Zuckerberg Initiative</a>
+                <a class="media-tag dark-red" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVHZJOENGOVpDVU5DWTNGeUswQzlPQlRHaFNQREp6eF9hcFhrTzNReWQ2Z1VnX3ZYOE9NM185aTJHd2xhWU1mdmc5R0tQUFlSay1OYllaNmpYQ001U1ZKSkNOdHAwRXdMLUlzbDdraWFMM3JjOG1wMmNBNGx2aWZTeXFGY2ttMmlEQ2hKSklFb3BaTTFjZ3J2LTh4N3BZenNNMXhKRkVKaDhCR0xjOUVsOHZlTHYxN2dzWWtj?oc=5" target="_blank" rel="noopener" title="Chan Zuckerberg Initiative Introduces New GREmLN Model For Genetics (24-Jul 00:00:00 ET)">Forbes</a>
+                <a class="media-tag white" href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxQRmRqM1VocUpGMENmWm5wNDhpUlMzQ2Y2aHV6Mng0NGVOcmEtSWkxLWo5YjhvajZMb0syZVlYYXdIRTBQTHJzbHFaeXhKR0lxS05BcU5EcnA3OWU1WmpkekRZb1ItV0RHZF83c0Z1QWVtMWVLS3gzNFFvWEgyUWtTZ1ZVLVJWU0lxNFQ4NmN0bXJUaTVLX05oWlBjNnF1VzA5S0tSSjdXY1lNNXdUTVVld0dHV244eDNmVnF6Y2gwRlZHUDJYTXExTThkLXkzdVJNT1ZV?oc=5" target="_blank" rel="noopener" title="Chan Zuckerberg Initiative?s AI Model Captures Gene Networks to Address Disease (10-Jul 00:00:00 ET)">Genetic Engineering and Biotechnology News</a>
+                <a class="media-tag gray" href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNMG1KQzU4LWJBcXpqejhRdk02N2l6R0lxTjJQem84bmYtRUVQRlJyeWVxZFJtMnJuUEJ4UlRyOFk3VU53ckM1MTltRWFnUkVwbzdkSkthWC0zRjhwaEFsRzB4NTFPLUg2SVhyTU9pZmpJMl9EbVdXakt2d2xHX01LVjlORkxvSnhYVWRuVzROV0pEVFRSbWxvOThWc29XV3dCaW1QNkxsMWNzdE0xTm1RRWJsdjVYUXZFbDdjMzc3NUFHdkFTSWc?oc=5" target="_blank" rel="noopener" title="Mogwai Masters: CZI?s GREmLN Is Transforming AI to Think Like Biology (14-Jul 00:00:00 ET)">Inside Precision Medicine</a>
+                <a class="media-tag light-gray" href="https://www.czbiohub.org/news/with-no-need-for-sleep-or-food-ai-built-scientists-get-the-job-done-quickly/" target="_blank" rel="noopener" title="AI-built  scientists  get the job done quickly (01-Aug 12:00:00 ET)">Chan Zuckerberg Biohub Network</a>
+                <a class="media-tag black" href="https://ecancer.org/en/news/26727-new-czi-ai-model-could-help-scientists-pinpoint-signs-of-cancer-cells" target="_blank" rel="noopener" title="New CZI AI model could help scientists pinpoint signs of cancer cells (11-Jul 12:18:00 ET)">eCancer</a>
+                <a class="media-tag red" href="https://globalhealthnewswire.com/technology/2025/07/10/new-czi-ai-model-could-help-scientists-pinpoint-signs-of-cancer-cells" target="_blank" rel="noopener" title="New CZI AI Model Could Help Scientists Pinpoint Signs of Cancer Cells (10-Jul 12:10:00 ET)">Global Health News Wire</a>
+                <a class="media-tag dark-red" href="https://ground.news/article/chan-zuckerberg-initiative-unveils-ai-model-to-decode-cellular-behavior" target="_blank" rel="noopener" title="Chan Zuckerberg initiative unveils AI model to decode ... (01-Aug 12:00:00 ET)">Ground News</a>
+                <a class="media-tag white" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVlNFYjFVTk05WlAtX2RqNmw1NVU5T19GeFVhWFdpWjhNRGRKMVFxY2RZazhJWDJObTFnRFlkYjFLRDVKdlBXQm9FY2VwSnNXMENPdmRnYXJ3aEdtZXRUWlp4TTZWcW5ENHF3cDE5UUVHVEI0MFBJTGo1NnloUUdwRVdodnR5Nkw0a3lheTBaWDVLbU9ETDlzbXZQM2wwMnMwLVhnMVRKTUQwYllETF9yQ2xVdmxZY3p2UnUw?oc=5" target="_blank" rel="noopener" title="Chan Zuckerberg initiative unveils AI model to decode cellular behavior - News (10-Jul 00:00:00 ET)">Medical</a>
+                <a class="media-tag gray" href="https://medicalxpress.com/news/2025-07-ai-scientists-cancer-cells.html" target="_blank" rel="noopener" title="New AI model could help scientists pinpoint signs of cancer cells (10-Jul 12:16:00 ET)">Medical Xpress</a>
+                <a class="media-tag light-gray" href="https://philanthropynewsdigest.org/news/other-sources/article/?id=16249318&amp;title=New-CZI-AI-Model-Could-Help-Scientists-Pinpoint-Signs-of-Cancer-Cells" target="_blank" rel="noopener" title="New CZI AI Model Could Help Scientists Pinpoint Signs of Cancer Cells (09-Jul 12:15:00 ET)">Philanthropy News Digets</a>
+                <a class="media-tag black" href="https://www.publicnow.com/view/C64D6849324A94341A73C04089F867582FC5F6BB" target="_blank" rel="noopener" title="New CZI AI Model Could Help Scientists Pinpoint Signs of Cancer Cells (10-Jul 12:14:00 ET)">Public Now</a>
+                <a class="media-tag red" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQc081QWJuU3Q2TzV5Q3pkcUZUM2V5Mk1OcUxDMFVkcDRCYkhndXdLUm1RSU9kTHlkRU5GcjM1ckdMODV4Xzc4UzlwbklYVzF2SGVDT3hCenI5NUNCWDBjSW5uc3NjV2JoejJUVm1xbU1yc2V5d2VNdDN2cnZaWDVrWmhyX3ROcjlRU2JZdU02Tm9DbnhIbWtEd3ZidEZmemF5Zl9HcXRlTWVvcF9KV1HSAa4BQVVfeXFMUHNPNUFiblN0Nk81eUN6ZHFGVDNleTJNTnFMQzBVZHA0QmJIZ3V3S1JtUUlPZEx5ZEVORnIzNXJHTDg1eF83OFM5cG5JWFcxdkhlQ094QnpyOTVDQlgwY0lubnNzY1diaHoyVFZtcW1NcnNleXdlTXQzdnJ2Wlg1a1pocl90TnI5UVNiWXVNNk5vQ254SG1rRHd2YnRGZnpheWZfR3F0ZU1lb3BfSldR?oc=5" target="_blank" rel="noopener" title="With No Need for Sleep or Food, AI-Built ?Scientists? Get the Job Done Quickly | Newswise (23-Jul 00:00:00 ET)">Newswise</a>
+                <a class="media-tag dark-red" href="https://www.czbiohub.org/news/with-no-need-for-sleep-or-food-ai-built-scientists-get-the-job-done-quickly/" target="_blank" rel="noopener" title="AI-built  scientists  get the job done quickly (31-Jul 12:00:00 ET)">Chan Zuckerberg Biohub Network</a>
+                <a class="media-tag white" href="https://www.czbiohub.org/news/did-a-lab-of-ai-scientists-design-a-possible-covid-treatment/" target="_blank" rel="noopener" title="Did a lab of AI ?scientists? design a possible COVID ... (29-Jul 00:00:00 ET)">czbiohub.org</a>
+                <a class="media-tag gray" href="https://www.labmanager.com/with-no-need-for-sleep-or-food-ai-scientists-get-the-job-done-faster-34170" target="_blank" rel="noopener" title="With No Need for Sleep or Food, AI Scientists Get the Job ... (31-Jul 12:00:00 ET)">Lab Manager</a>
+                <a class="media-tag light-gray" href="https://www.threads.com/@chanzuckerberginitiative/post/DMsp099s72y/video-what-happens-when-ai-agents-run-their-own-research-meetingsscientists-at-the-sf-" target="_blank" rel="noopener" title="What happens when AI agents run their own research ... (29-Jul 18:26:47 ET)">threads.com</a>
+                <a class="media-tag black" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPMDZvTEVlT0o0RlBVUDRzd3pTa3BKMEFCMjBkdUcxeXduZWo4RVJKd2dWSGdqeVFwaGdXNVJtX0tJTU90SUxYZ0xOUEdzZ0M1UEUzVmtFMDZXZ2FMRjJfdndXRktRdV9yb281Y0tRNE1XV0xOZGFVUkpGRkdGbmNOeEVjZ2F3Vk55X2hSci1hWXcwY1BtVXdWaGJYOA?oc=5" target="_blank" rel="noopener" title="Cell Science Unlocked: The Dynamic Duo of Essential Tools for Discovery (25-Aug 00:00:00 ET)">BIOENGINEER.ORG</a>
+                <a class="media-tag red" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9ySG5WTUI4SHhHYmQ5VHhjb3lUb21VbTMwckE4M3BVUGlVUWlWMEgtc0NGT3RTem43ZzhYaGhjeXM2cWw0dVlSZGJXaHh3dm00blBJa0tLN3lKMy0xWmhFUThGbTIwVjg1OGZfUzFVQVNrblZmRTBuNC1oMGg5ZDA?oc=5" target="_blank" rel="noopener" title="Ultrack and inTRACKtive: A powerful pair of tools to help track cells through embryonic development (25-Aug 00:00:00 ET)">Phys.org</a>
+                <a class="media-tag dark-red" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPR0FwRDlsT1gwT090VXVpQ2pHeGxmXzhfSDFWSTZnTl9mYlI0NERzQVNfOXlxQlo3SGZrVl80Zi1oeEY5T3h5aWxjRkhaRUEtRmUxOGZWUDRiSG11U3dIM3lneU1reFdybkVJVUh3Z3JpdnA3b0NKOGVxV0xESnBheXBtMHNrLXo3WEFmRGw0SVM3UUdQSVZnM2E2TDd3X3h4c2p4QQ?oc=5" target="_blank" rel="noopener" title="New tool revolutionizes whole-embryo cell tracking (30-Aug 00:00:00 ET)">Wiley Analytical Science</a>
+                <a class="media-tag white" href="http://angellstreetpsychiatry.com/PatientPortal/MyPractice.aspx?UAID={1EAC0D88-68E5-4034-88CC-0458E17E0CEF}&amp;TabID={X}&amp;ArticleID=NW-833927" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (25-Aug 15:50:00 ET)">Angell Street Psychiatry, Ltd.</a>
+                <a class="media-tag gray" href="https://www.completefamilycareny.com/PatientPortal/MyPractice.aspx?UAID={2F9F56E9-A172-4A93-9A0B-26748504C001}&amp;TabID={X}&amp;ArticleID=NW-833927" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (29-Aug 12:00:00 ET)">completefamilycareny.com</a>
+                <a class="media-tag light-gray" href="https://www.crossroadspsychiatric.com/PatientPortal/MyPractice.aspx?UAID={CA2E7E29-3E7F-46E6-9ECE-F2A9BC035B4B}&amp;TabID={X}&amp;ArticleID=NW-815805" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (25-Aug 15:42:00 ET)">Crossroads Psychiatric Group</a>
+                <a class="media-tag black" href="https://www.czbiohub.org/life-science/dynamic-duo-powerful-tools-show-cells-in-action/" target="_blank" rel="noopener" title="Dynamic duo: powerful new tools show cells in action (25-Aug 18:50:04 ET)">czbiohub.org</a>
+                <a class="media-tag red" href="http://www.digestivehealthcarewatertown.com/PatientPortal/MyPractice.aspx?UAID={3EB6A821-EC84-4DCB-93B0-6E7711065486}&amp;TabID={X}&amp;ArticleID=NW-834126" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (25-Aug 09:51:00 ET)">Digestive Health Care Watertown</a>
+                <a class="media-tag dark-red" href="https://www.dobbsferrypharmacy.com/PatientPortal/MyPractice.aspx?UAID=C02C9140-EE45-4012-81AE-26B3E0C445ED&amp;TabID={X}&amp;ArticleID=2659881666" target="_blank" rel="noopener" title="Lymph Node Removal During Breast Cancer Mastectomy ... (28-Aug 15:53:00 ET)">Dobbs Ferry Pharmacy</a>
+                <a class="media-tag white" href="https://drdeguzman.com/PatientPortal/MyPractice.aspx?UAID={A4570A36-6651-420C-A708-E5DD86940C4A}&amp;TabID={X}&amp;ArticleID=NW-833927" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (29-Aug 12:00:00 ET)">drdeguzman.com</a>
+                <a class="media-tag gray" href="https://healthbookplus.ai/dynamic-duo-a-powerful-pair-of-tools-to-learn-about-cells/" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (29-Aug 12:00:00 ET)">HealthBook</a>
+                <a class="media-tag light-gray" href="https://www.healthbanks.com/PatientPortal/MyPractice.aspx?UAID={69922199-D699-483E-B75F-C279F78658B3}&amp;TabID={X}&amp;ArticleID=2659623062&amp;NoLg=1" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (26-Aug 09:47:00 ET)">Hoosick Street Pediatrics</a>
+                <a class="media-tag black" href="http://www.markcousinsmd.com/PatientPortal/MyPractice.aspx?UAID={BBAE39F8-5122-4ABE-8747-226F0E09FB70}&amp;TabID={X}&amp;ArticleID=NW-834127" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells (25-Aug 09:58:00 ET)">Mark Kosins, M.D. and Associates</a>
+                <a class="media-tag red" href="https://www.newsbreak.com/news/4195153733174-dynamic-duo-a-powerful-pair-of-tools-to-learn-about-cells" target="_blank" rel="noopener" title="Dynamic duo: a powerful pair of tools to learn about cells (29-Aug 12:00:00 ET)">NewsBreak: Local News &amp; Alerts</a>
+                <a class="media-tag dark-red" href="https://www.newsnow.co.uk/h/?search=&quot;Dynamic Duo&quot;" target="_blank" rel="noopener" title="&quot;Dynamic Duo&quot; news (30-Aug 09:39:00 ET)">NewsNow</a>
+                <a class="media-tag white" href="https://news.google.com/read/CBMilgFBVV95cUxOdzQ5ekhHaW9qSnpNSWlibmtib0lUZ2FLZC04YmJLYlhEaWhFR1gzR1VsOVFPRzRlajMybkRGV1FDZlJkM21HVFBBYW5ESXlGZDVYUWlXeFNTLURjMHFPblFDb0h1UXF1VktSQ0FJenI2clZLVUZDZDUzcFZuOVE3MWktMDdRZ3ZlQ3NLcHkxazNhVTFRMVHSAZYBQVVfeXFMTnc0OXpIR2lvakp6TUlpYm5rYm9JVGdhS2QtOGJiS2JYRGloRUdYM0dVbDlRT0c0ZWozMm5ERldRQ2ZSZDNtR1RQQWFuREl5RmQ1WFFpV3hTUy1EYzBxT25RQ29IdVFxdVZLUkNBSXpyNnJWS1VGQ2Q1M3BWbjlRNzFpLTA3UWd2ZUNzS3B5MWszYVUxUTFR?hl=en-PH&amp;gl=PH&amp;ceid=PH:en" target="_blank" rel="noopener" title="Dynamic Duo: A Powerful Pair of Tools to Learn About Cells | Newswise (22-Aug 04:29:18 ET)">Newswise</a>
+                <a class="media-tag gray" href="https://scienmag.com/cell-science-unlocked-the-dynamic-duo-of-essential-tools-for-discovery/" target="_blank" rel="noopener" title="Cell Science Unlocked: The Dynamic Duo of Essential ... (29-Aug 12:00:00 ET)">Scienmag</a>
             </div>
         </div>
     </section>
@@ -2805,6 +2446,7 @@
         <div class="timeline">
             <div class="timeline-track"></div>
             <div class="timeline-progress" id="timelineProgress"></div>
+
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span class="month">SEP 20</span>
@@ -2828,6 +2470,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span class="month">OCT 24</span>
@@ -2852,6 +2495,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="timeline-item highlight-item">
                 <div class="timeline-date">
                     <span class="month">JUL 10</span>
@@ -2878,6 +2522,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="timeline-item highlight-item">
                 <div class="timeline-date">
                     <span class="month">JUL 23</span>
@@ -2892,6 +2537,7 @@
                     <p class="timeline-desc">Revolutionary AI research capabilities</p>
                 </div>
             </div>
+
             <div class="timeline-item highlight-item">
                 <div class="timeline-date">
                     <span class="month">AUG 21</span>
@@ -2915,6 +2561,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -2929,78 +2576,140 @@
                 </div>
             </div>
         </div>
-
     </section>
 
-    <!-- Opportunity Section -->
+    <!-- Opportunity Section (UPDATED FOR CLARITY) -->
     <section class="opportunity-section" id="opportunity">
         <h2 class="section-title">Options to Increase Results</h2>
         <div class="opportunity-intro">
-            <p>Based on your current performance, here's how Newswise can amplify CZ Biohub's research impact:</p>
+            <p>
+                <strong>What we recommend next:</strong> CZ Biohub has strong results when active — but publishing has been
+                intermittent. The fastest path to more coverage is a consistent cadence (1–2 stories/month), paired with
+                targeted pitching and expert visibility.
+            </p>
+            <p style="margin-top:0.75rem; font-size:0.98rem; opacity:0.95;">
+                Content ideas already present on CZ Biohub’s site that can be distributed and pitched include research
+                updates, interviews/podcasts, tool/resource announcements, partnerships, and program highlights.
+            </p>
         </div>
 
         <div class="opportunity-grid">
             <div class="opportunity-card">
                 <div class="opp-header">
                     <span class="opp-number">01</span>
-                    <h3>Expanded Distribution</h3>
+                    <h3>Publish More (and More Consistently)</h3>
                 </div>
-                <p>Access to 4,000+ journalists and media outlets actively seeking science and health stories</p>
+                <p>
+                    Increase total story volume by moving from “occasional launches” to a repeatable monthly publishing rhythm.
+                    Consistency is the #1 lever that increases outlet engagement.
+                </p>
                 <ul>
-                    <li>Targeted journalist matching</li>
-                    <li>Embargo management</li>
-                    <li>Multi-channel distribution</li>
+                    <li><strong>Recommendation:</strong> 12–18 stories/year (1–2 per month)</li>
+                    <li><strong>Best-fit content:</strong> research milestones, tools/resources, partnerships, events, programs</li>
+                    <li><strong>Distribution upgrade:</strong> expand targeting by science/health beats + outlet types</li>
                 </ul>
+
+                <div class="opp-reco">
+                    <span class="opp-reco-title">What we would do with you</span>
+                    <span class="pill">Monthly editorial calendar</span>
+                    <span class="pill">Targeted journalist lists</span>
+                    <span class="pill">Embargo-ready distribution</span>
+                </div>
             </div>
 
             <div class="opportunity-card">
                 <div class="opp-header">
                     <span class="opp-number">02</span>
-                    <h3>Enhanced Analytics</h3>
+                    <h3>Use Analytics to Optimize What Works</h3>
                 </div>
-                <p>Real-time tracking and comprehensive reporting on your research coverage</p>
+                <p>
+                    Go beyond “views” and turn each release into a learning loop: which beats engage, which outlets respond,
+                    and what content types drive the strongest pickup and clips.
+                </p>
                 <ul>
-                    <li>Media outlet tracking</li>
-                    <li>Engagement metrics</li>
-                    <li>ROI measurement</li>
+                    <li><strong>Recommendation:</strong> monthly performance snapshot + quarterly trend review</li>
+                    <li><strong>Identify:</strong> top outlet categories + repeat engager lists</li>
+                    <li><strong>Improve:</strong> headlines, summaries, and targeting based on performance</li>
                 </ul>
+
+                <div class="opp-reco">
+                    <span class="opp-reco-title">What we would do with you</span>
+                    <span class="pill">Outlet & beat tracking</span>
+                    <span class="pill">Engagement reports</span>
+                    <span class="pill">Content testing & iteration</span>
+                </div>
             </div>
 
             <div class="opportunity-card">
                 <div class="opp-header">
                     <span class="opp-number">03</span>
-                    <h3>Expert Database</h3>
+                    <h3>Expert Database (Yes—Pitching Experts)</h3>
                 </div>
-                <p>Position CZ Biohub researchers as go-to experts for media inquiries</p>
+                <p>
+                    Position CZ Biohub researchers as go-to sources for breaking news and explainers. This is a separate
+                    pathway to visibility that doesn’t depend on publishing a full release.
+                </p>
                 <ul>
-                    <li>Expert profile creation</li>
-                    <li>Media inquiry matching</li>
-                    <li>Thought leadership</li>
+                    <li><strong>Recommendation:</strong> build 10–20 expert profiles aligned to key beats</li>
+                    <li><strong>Pitching:</strong> respond to media inquiries + proactive “expert availability” outreach</li>
+                    <li><strong>Thought leadership:</strong> rapid comments on timely topics (AI, genomics, cancer, etc.)</li>
                 </ul>
+
+                <div class="opp-reco">
+                    <span class="opp-reco-title">What we would do with you</span>
+                    <span class="pill">Expert profile creation</span>
+                    <span class="pill">Inquiry matching</span>
+                    <span class="pill">Proactive pitching support</span>
+                </div>
             </div>
 
             <div class="opportunity-card highlight-opp">
                 <div class="opp-header">
                     <span class="opp-number">04</span>
-                    <h3>Strategic Support</h3>
+                    <h3>Strategic Support (Done-With-You Plan)</h3>
                 </div>
-                <p>Dedicated support to maximize your research communication strategy</p>
+                <p>
+                    If CZ Biohub wants more consistent results without extra workload, we can build and run a repeatable
+                    comms plan: topics, timing, packaging, and audience targeting.
+                </p>
                 <ul>
-                    <li>Content optimization</li>
-                    <li>Timing recommendations</li>
-                    <li>Audience targeting</li>
+                    <li><strong>Recommendation:</strong> 90-day launch plan + 6-month editorial roadmap</li>
+                    <li>Message and content optimization (clear, reporter-friendly summaries)</li>
+                    <li>Timing recommendations (conference/journal/embargo coordination)</li>
                 </ul>
+
+                <div class="opp-reco">
+                    <span class="opp-reco-title">What we would do with you</span>
+                    <span class="pill">Planning + editorial support</span>
+                    <span class="pill">Audience targeting</span>
+                    <span class="pill">Quarterly review & reset</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick-start plan -->
+        <div class="quickstart">
+            <div class="insight-highlight">
+                <h4>Recommended Quick-Start (Next 60 Days)</h4>
+                <p>
+                    <strong>Step 1:</strong> Confirm 6–8 story topics already on your calendar (research milestones, tool launches, interviews).<br>
+                    <strong>Step 2:</strong> Publish 1 story every 2–4 weeks with targeted lists (AI, genomics, cancer, tools).<br>
+                    <strong>Step 3:</strong> Build an initial set of expert profiles for proactive pitching and inquiry matching.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
+    <!-- Comparison Section (UPDATED FOR CLARITY) -->
     <section class="comparison-section" id="comparison">
         <h2 class="section-title">What's Possible: A Success Story</h2>
         <div class="comparison-intro">
-            <p>See how similar organizations have maximized their Newswise partnership with consistent, strategic
-                usage:</p>
+            <p>
+                This comparison shows what happens when a similar organization uses Newswise consistently over a single year.
+                <strong>Key change:</strong> steady publishing cadence (active every month), not “one-off” activity.
+            </p>
         </div>
+
         <div class="comparison-grid">
             <div class="comparison-card current">
                 <h3>CZ Biohub</h3>
@@ -3016,8 +2725,8 @@
                         <span class="comp-label">Media Views</span>
                     </div>
                     <div class="comp-stat">
-                        <span class="comp-value">34</span>
-                        <span class="comp-label">Clips</span>
+                        <span class="comp-value">4</span>
+                        <span class="comp-label">Active Months</span>
                     </div>
                 </div>
                 <div class="usage-note">
@@ -3025,13 +2734,15 @@
                     <span>Gap in activity: Oct 2022 – Jul 2025</span>
                 </div>
             </div>
+
             <div class="comparison-arrow">
                 <span>→</span>
                 <p>With Consistent Usage</p>
             </div>
+
             <div class="comparison-card potential">
-                <h3>Similar Organization</h3>
-                <div class="time-badge active">1 Year on Platform</div>
+                <h3>Anonymized Newswise Partner</h3>
+                <div class="time-badge active">1 Year of Consistent Publishing</div>
                 <div class="time-detail">January – December 2025</div>
                 <div class="comparison-stats">
                     <div class="comp-stat">
@@ -3042,23 +2753,34 @@
                         <span class="comp-value">94</span>
                         <span class="comp-label">Media Views</span>
                     </div>
-                    <div class="comp-stat highlight-stat">
-                        <span class="comp-value">+112%</span>
-                        <span class="comp-label">YoY Growth</span>
+                    <div class="comp-stat">
+                        <span class="comp-value">12</span>
+                        <span class="comp-label">Active Months</span>
                     </div>
                 </div>
                 <div class="usage-note success">
                     <span class="note-icon">✓</span>
-                    <span>Consistent monthly publishing</span>
+                    <span>Consistent monthly publishing (Q4 lift vs Jan–Sep)</span>
                 </div>
             </div>
         </div>
+
+        <div class="comparison-note">
+            <span class="mini">
+                <strong>Notes:</strong> “Media Views” = unique media outlets that viewed the release in Newswise.
+                CZ Biohub also generated <strong>34 earned media clips</strong> from these stories.
+                (The anonymized partner report tracks articles/views and period lifts; clips were not presented as a KPI.)
+            </span>
+        </div>
+
         <div class="comparison-insight">
             <div class="insight-highlight">
                 <h4>The Key Difference: Consistency</h4>
-                <p>Similar organizations have achieved <strong>3.4x more articles</strong> and <strong>2.7x more
-                        media views</strong> in just <strong>one year</strong> through regular, strategic content
-                    distribution. Imagine what CZ Biohub could achieve with the same approach.</p>
+                <p>
+                    With steady publishing, a similar organization achieved <strong>3.4x more articles</strong> and
+                    <strong>2.7x more media views</strong> in a single year. Imagine what CZ Biohub could achieve with
+                    1–2 releases per month plus expert pitching.
+                </p>
             </div>
         </div>
     </section>
@@ -3138,11 +2860,9 @@
 
         // Chart.js Configuration - Colorful Theme
         const chartColors = {
-            // Primary colors
             red: '#dc2626',
             redLight: '#ef4444',
             redDark: '#991b1b',
-            // Vibrant color palette
             blue: '#3b82f6',
             blueLight: '#60a5fa',
             blueDark: '#2563eb',
@@ -3167,7 +2887,6 @@
             cyan: '#06b6d4',
             cyanLight: '#22d3ee',
             cyanDark: '#0891b2',
-            // Neutrals
             white: '#ffffff',
             gray: '#9ca3af',
             grayLight: '#d1d5db',
@@ -3177,7 +2896,6 @@
             tooltipBg: 'rgba(20, 20, 20, 0.95)'
         };
 
-        // Set Chart.js defaults for elegant dark theme
         Chart.defaults.color = '#ffffff';
         Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.08)';
         Chart.defaults.font.family = "'Inter', sans-serif";
@@ -3192,14 +2910,12 @@
             { title: 'Dynamic Duo: Tools...', date: 'Aug 2025', views: 3, clips: 17, hits: 1923 }
         ];
 
-        // 3D Bar Chart with Colorful Bars and Data Labels
         function createOutletViewsChart() {
             const ctx = document.getElementById('outletViewsChart').getContext('2d');
             const isLightMode = document.body.classList.contains('light-mode');
             const textColor = isLightMode ? '#1e293b' : '#ffffff';
             const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
 
-            // Colorful gradients for each bar
             const barColors = [
                 { main: chartColors.blue, light: chartColors.blueLight, dark: chartColors.blueDark },
                 { main: chartColors.purple, light: chartColors.purpleLight, dark: chartColors.purpleDark },
@@ -3208,8 +2924,7 @@
                 { main: chartColors.pink, light: chartColors.pinkLight, dark: chartColors.pinkDark }
             ];
 
-            // Create individual gradients for each bar
-            const backgroundColors = barColors.map((color, i) => {
+            const backgroundColors = barColors.map((color) => {
                 const gradient = ctx.createLinearGradient(0, 0, 0, 400);
                 gradient.addColorStop(0, color.light);
                 gradient.addColorStop(0.5, color.main);
@@ -3219,7 +2934,6 @@
 
             const borderColors = barColors.map(color => color.light);
 
-            // Plugin to show values on top of bars
             const barLabelsPlugin = {
                 id: 'barLabels',
                 afterDatasetsDraw: function (chart) {
@@ -3250,7 +2964,6 @@
                 data: {
                     labels: articleData.map(a => a.title.substring(0, 18) + '...'),
                     datasets: [
-                        // Shadow layer for 3D effect
                         {
                             label: 'Shadow',
                             data: articleData.map(a => a.views),
@@ -3260,38 +2973,27 @@
                             borderRadius: 10,
                             borderSkipped: false,
                             barThickness: 45,
-                            grouped: false, // Important for layering
+                            grouped: false,
                         },
-                        // Main colorful bars
                         {
                             label: 'Media Outlet Views',
                             data: articleData.map(a => a.views),
                             backgroundColor: backgroundColors,
                             borderColor: borderColors,
                             borderWidth: 2,
-                            borderRadius: {
-                                topLeft: 10,
-                                topRight: 10,
-                                bottomLeft: 10,
-                                bottomRight: 10
-                            },
+                            borderRadius: { topLeft: 10, topRight: 10, bottomLeft: 10, bottomRight: 10 },
                             borderSkipped: false,
                             barThickness: 40,
-                            grouped: false, // Important for layering
+                            grouped: false,
                         }
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
-                    interaction: {
-                        mode: 'index',
-                        intersect: false, // Allows hovering the "shadow" or gap to trigger tooltip
-                    },
+                    interaction: { mode: 'index', intersect: false },
                     plugins: {
-                        legend: {
-                            display: false
-                        },
+                        legend: { display: false },
                         tooltip: {
                             backgroundColor: isLightMode ? 'rgba(255, 255, 255, 0.95)' : chartColors.tooltipBg,
                             titleColor: isLightMode ? '#1e293b' : chartColors.white,
@@ -3303,58 +3005,27 @@
                             padding: 16,
                             cornerRadius: 12,
                             displayColors: true,
-                            filter: function (tooltipItem) {
-                                return tooltipItem.datasetIndex === 1;
-                            },
+                            filter: function (tooltipItem) { return tooltipItem.datasetIndex === 1; },
                             callbacks: {
-                                title: function (context) {
-                                    return articleData[context[0].dataIndex].title;
-                                },
-                                label: function (context) {
-                                    return `${context.parsed.y} Media Outlet Views`;
-                                }
+                                title: function (context) { return articleData[context[0].dataIndex].title; },
+                                label: function (context) { return `${context.parsed.y} Media Outlet Views`; }
                             }
                         }
                     },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            grid: {
-                                color: gridColor,
-                                lineWidth: 1
-                            },
-                            ticks: {
-                                font: { size: 12, weight: '600' },
-                                color: textColor,
-                                padding: 10
-                            },
-                            border: {
-                                display: false
-                            }
+                            grid: { color: gridColor, lineWidth: 1 },
+                            ticks: { font: { size: 12, weight: '600' }, color: textColor, padding: 10 },
+                            border: { display: false }
                         },
                         x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                font: { size: 10, weight: '600' },
-                                maxRotation: 45,
-                                color: textColor,
-                                padding: 8
-                            },
-                            border: {
-                                display: false
-                            }
+                            grid: { display: false },
+                            ticks: { font: { size: 10, weight: '600' }, maxRotation: 45, color: textColor, padding: 8 },
+                            border: { display: false }
                         }
                     },
-                    layout: {
-                        padding: {
-                            left: 10,
-                            right: 10,
-                            top: 30,
-                            bottom: 10
-                        }
-                    }
+                    layout: { padding: { left: 10, right: 10, top: 30, bottom: 10 } }
                 },
                 plugins: [barLabelsPlugin]
             });
@@ -3363,10 +3034,8 @@
         function createEngagementChart() {
             const ctx = document.getElementById('engagementChart').getContext('2d');
             const isLightMode = document.body.classList.contains('light-mode');
-            const textColor = isLightMode ? '#0f172a' : '#ffffff'; // Darker text for light mode
-            const secondaryText = isLightMode ? '#475569' : '#9ca3af'; // Darker secondary for light mode
+            const textColor = isLightMode ? '#0f172a' : '#ffffff';
 
-            // Plugin to display values on segments and center text
             const centerTextPlugin = {
                 id: 'centerText',
                 afterDraw: function (chart) {
@@ -3379,12 +3048,10 @@
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'middle';
 
-                    // Total value
                     ctx.font = '800 42px Inter, sans-serif';
                     ctx.fillStyle = isLight ? '#0f172a' : '#ffffff';
                     ctx.fillText('2,754', centerX, centerY - 10);
 
-                    // Label
                     ctx.font = '500 14px Inter, sans-serif';
                     ctx.fillStyle = isLight ? '#64748b' : '#9ca3af';
                     ctx.fillText('Total Engagement', centerX, centerY + 25);
@@ -3399,20 +3066,15 @@
                     const ctx = chart.ctx;
 
                     chart.data.datasets.forEach((dataset, datasetIndex) => {
-                        // Skip Shadow dataset for labels (assuming shadow is index 0 or has 'Shadow' label)
-                        // Also check if dataset matches our shadow configuration
                         if (dataset.label === 'Shadow' || datasetIndex === 0) return;
 
                         const meta = chart.getDatasetMeta(datasetIndex);
                         const labels = ['35', '34', '2,685'];
-                        const isLight = document.body.classList.contains('light-mode');
 
                         meta.data.forEach((arc, index) => {
-                            // Only draw if the arc is visible
                             if (arc.circumference < 0.1) return;
 
                             const centerPoint = arc.getCenterPoint();
-                            // Move label slightly outward for better visibility
                             const midAngle = (arc.startAngle + arc.endAngle) / 2;
                             const radius = (arc.innerRadius + arc.outerRadius) / 2;
 
@@ -3423,21 +3085,13 @@
                             ctx.textAlign = 'center';
                             ctx.textBaseline = 'middle';
                             ctx.font = 'bold 16px Inter, sans-serif';
-
-                            // Text Stroke for better contrast on any background
-                            // Use a dark stroke to make white text pop on colored backgrounds
                             ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
                             ctx.lineWidth = 3;
                             ctx.strokeText(labels[index], x, y);
-
-                            // Text Fill
-                            ctx.fillStyle = '#ffffff'; // White text
-
-                            // Add shadow for extra pop
+                            ctx.fillStyle = '#ffffff';
                             ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
                             ctx.shadowBlur = 4;
                             ctx.fillText(labels[index], x, y);
-
                             ctx.restore();
                         });
                     });
@@ -3449,7 +3103,6 @@
                 data: {
                     labels: ['Media Outlet Views (35)', 'Media Clips (34)', 'Total Hits (15,610)'],
                     datasets: [
-                        // Shadow layer
                         {
                             label: 'Shadow',
                             data: [35, 34, 27],
@@ -3462,25 +3115,12 @@
                             offset: 8,
                             spacing: 3
                         },
-                        // Main colorful layer
                         {
                             label: 'Main',
                             data: [35, 34, 27],
-                            backgroundColor: [
-                                chartColors.blue,
-                                chartColors.purple,
-                                chartColors.teal
-                            ],
-                            hoverBackgroundColor: [
-                                chartColors.blueLight,
-                                chartColors.purpleLight,
-                                chartColors.tealLight
-                            ],
-                            borderColor: [
-                                chartColors.blueDark,
-                                chartColors.purpleDark,
-                                chartColors.tealDark
-                            ],
+                            backgroundColor: [chartColors.blue, chartColors.purple, chartColors.teal],
+                            hoverBackgroundColor: [chartColors.blueLight, chartColors.purpleLight, chartColors.tealLight],
+                            borderColor: [chartColors.blueDark, chartColors.purpleDark, chartColors.tealDark],
                             borderWidth: 3,
                             hoverOffset: 15,
                             spacing: 4
@@ -3505,7 +3145,6 @@
                                     const data = chart.data;
                                     const actualValues = [35, 34, 15610];
                                     const labelNames = ['Media Outlet Views', 'Media Clips', 'Total Hits'];
-                                    const isLight = document.body.classList.contains('light-mode');
                                     return labelNames.map((label, i) => ({
                                         text: `${label}: ${actualValues[i].toLocaleString()}`,
                                         fillStyle: data.datasets[1].backgroundColor[i],
@@ -3513,8 +3152,7 @@
                                         lineWidth: 0,
                                         pointStyle: 'circle',
                                         hidden: false,
-                                        index: i,
-                                        fontColor: isLight ? '#1e293b' : '#ffffff'
+                                        index: i
                                     }));
                                 }
                             }
@@ -3528,9 +3166,7 @@
                             padding: 16,
                             cornerRadius: 12,
                             displayColors: true,
-                            filter: function (tooltipItem) {
-                                return tooltipItem.datasetIndex === 1;
-                            },
+                            filter: function (tooltipItem) { return tooltipItem.datasetIndex === 1; },
                             callbacks: {
                                 label: function (context) {
                                     const actualValues = [35, 34, 15610];
@@ -3541,22 +3177,18 @@
                         }
                     },
                     cutout: '60%',
-                    layout: {
-                        padding: 20
-                    }
+                    layout: { padding: 20 }
                 },
                 plugins: [centerTextPlugin, dataLabelsPlugin]
             });
         }
 
-        // 3D Area/Line Chart with colorful lines
         function createTimelineChart() {
             const ctx = document.getElementById('timelineChart').getContext('2d');
             const isLightMode = document.body.classList.contains('light-mode');
             const textColor = isLightMode ? '#1e293b' : '#ffffff';
             const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
 
-            // Create colorful gradients
             const areaGradient1 = ctx.createLinearGradient(0, 0, 0, 350);
             areaGradient1.addColorStop(0, isLightMode ? 'rgba(236, 72, 153, 0.3)' : 'rgba(236, 72, 153, 0.5)');
             areaGradient1.addColorStop(0.5, isLightMode ? 'rgba(236, 72, 153, 0.1)' : 'rgba(236, 72, 153, 0.2)');
@@ -3572,14 +3204,12 @@
             areaGradient2.addColorStop(0.5, isLightMode ? 'rgba(6, 182, 212, 0.05)' : 'rgba(6, 182, 212, 0.1)');
             areaGradient2.addColorStop(1, 'rgba(6, 182, 212, 0)');
 
-            // Plugin to show values on data points
             const lineLabelsPlugin = {
                 id: 'lineLabels',
                 afterDatasetsDraw: function (chart) {
                     const ctx = chart.ctx;
                     const isLight = document.body.classList.contains('light-mode');
 
-                    // Draw labels for Articles Published (dataset index 1)
                     const meta1 = chart.getDatasetMeta(1);
                     const data1 = [1, 1, 0, 0, 0, 2, 1];
                     meta1.data.forEach((point, index) => {
@@ -3596,7 +3226,6 @@
                         }
                     });
 
-                    // Draw labels for Media Outlet Views (dataset index 2)
                     const meta2 = chart.getDatasetMeta(2);
                     const data2 = [4, 6, 0, 0, 0, 22, 3];
                     meta2.data.forEach((point, index) => {
@@ -3620,7 +3249,6 @@
                 data: {
                     labels: ['Sep 2022', 'Oct 2022', 'Nov 2022', '...', 'Jun 2025', 'Jul 2025', 'Aug 2025'],
                     datasets: [
-                        // Shadow for 3D effect
                         {
                             label: 'Shadow',
                             data: [1, 1, 0, 0, 0, 2, 1],
@@ -3678,9 +3306,7 @@
                                 usePointStyle: true,
                                 pointStyle: 'circle',
                                 color: textColor,
-                                filter: function (item) {
-                                    return item.text !== 'Shadow';
-                                }
+                                filter: function (item) { return item.text !== 'Shadow'; }
                             }
                         },
                         tooltip: {
@@ -3693,82 +3319,29 @@
                             cornerRadius: 12,
                             mode: 'index',
                             intersect: false,
-                            filter: function (tooltipItem) {
-                                return tooltipItem.dataset.label !== 'Shadow';
-                            }
+                            filter: function (tooltipItem) { return tooltipItem.dataset.label !== 'Shadow'; }
                         }
                     },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            grid: {
-                                color: gridColor,
-                                lineWidth: 1
-                            },
-                            ticks: {
-                                color: textColor,
-                                font: { size: 12, weight: '600' },
-                                padding: 12
-                            },
-                            border: {
-                                display: false
-                            }
+                            grid: { color: gridColor, lineWidth: 1 },
+                            ticks: { color: textColor, font: { size: 12, weight: '600' }, padding: 12 },
+                            border: { display: false }
                         },
                         x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                color: textColor,
-                                font: { size: 11, weight: '600' },
-                                padding: 10
-                            },
-                            border: {
-                                display: false
-                            }
+                            grid: { display: false },
+                            ticks: { color: textColor, font: { size: 11, weight: '600' }, padding: 10 },
+                            border: { display: false }
                         }
                     },
-                    interaction: {
-                        mode: 'nearest',
-                        axis: 'x',
-                        intersect: false
-                    },
-                    layout: {
-                        padding: {
-                            left: 10,
-                            right: 20,
-                            top: 30,
-                            bottom: 10
-                        }
-                    }
+                    interaction: { mode: 'nearest', axis: 'x', intersect: false },
+                    layout: { padding: { left: 10, right: 20, top: 30, bottom: 10 } }
                 },
                 plugins: [lineLabelsPlugin]
             });
         }
 
-        // Intersection Observer for scroll animations
-        function setupScrollAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0) rotateX(0)';
-                        }, index * 100);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-            document.querySelectorAll('.metric-card, .timeline-item, .opportunity-card, .insight-card, .chart-card, .comparison-card').forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(40px) rotateX(-5deg)';
-                el.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)`;
-                el.style.transitionDelay = `${index * 0.05}s`;
-                observer.observe(el);
-            });
-        }
-
-        // Parallax effect for hero
         function setupParallax() {
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
@@ -3778,22 +3351,17 @@
                     hero.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
                 }
 
-                // Update Scroll Progress Bar
                 const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrolledPct = (winScroll / height) * 100;
                 const progressBar = document.getElementById("scrollProgressBar");
-                if (progressBar) {
-                    progressBar.style.width = scrolledPct + "%";
-                }
+                if (progressBar) progressBar.style.width = scrolledPct + "%";
 
-                // Update Timeline Progress
                 const timeline = document.querySelector('.timeline');
                 const timelineBar = document.getElementById('timelineProgress');
                 if (timeline && timelineBar) {
                     const rect = timeline.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
-                    // Start filling when top is at 70% of viewport
                     const startPoint = windowHeight * 0.7;
 
                     if (rect.top <= startPoint) {
@@ -3808,35 +3376,26 @@
             });
         }
 
-        // Theme Toggle Function
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             const isLightMode = document.body.classList.contains('light-mode');
             localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-
-            // Update chart colors for light mode
             updateChartColors(isLightMode);
         }
 
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
         }
 
-        // Update chart colors based on theme
         function updateChartColors(isLightMode) {
             const textColor = isLightMode ? '#1e293b' : '#ffffff';
             const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
-            const secondaryText = isLightMode ? '#64748b' : '#9ca3af';
 
             Chart.defaults.color = textColor;
             Chart.defaults.borderColor = gridColor;
-
-            // Update chartColors object
             chartColors.gridColor = gridColor;
 
-            // Recreate charts with new colors
             const outletChart = Chart.getChart('outletViewsChart');
             const engagementChart = Chart.getChart('engagementChart');
             const timelineChart = Chart.getChart('timelineChart');
@@ -3850,45 +3409,34 @@
             createTimelineChart();
         }
 
-        // Check for saved theme preference
         function initTheme() {
             const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-mode');
-            }
+            const isLightMode = savedTheme !== 'dark';
+            document.body.classList.toggle('light-mode', isLightMode);
+
+            const textColor = isLightMode ? '#1e293b' : '#ffffff';
+            const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
+            Chart.defaults.color = textColor;
+            Chart.defaults.borderColor = gridColor;
+            chartColors.gridColor = gridColor;
         }
 
-        // Smooth scroll for navigation links
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-                // Close mobile menu if open
+                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 document.querySelector('.nav-links').classList.remove('active');
             });
         });
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', function () {
-            // Initialize theme
             initTheme();
-
-            // Animate counters
             setTimeout(animateCounters, 600);
-
-            // Create charts
             createOutletViewsChart();
             createEngagementChart();
             createTimelineChart();
-
-            // Setup scroll animations
-            setupScrollAnimations();
-
-            // Setup parallax
             setupParallax();
         });
     </script>
