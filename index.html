@@ -3894,7 +3894,6 @@
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             const isLightMode = document.body.classList.contains('light-mode');
-            localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
             updateChartColors(isLightMode);
         }
 
@@ -3927,12 +3926,11 @@
         }
 
         function initTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const isLightMode = savedTheme !== 'dark';
-            document.body.classList.toggle('light-mode', isLightMode);
+            const isLightMode = true;
+            document.body.classList.add('light-mode');
 
-            const textColor = isLightMode ? '#1e293b' : '#ffffff';
-            const gridColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)';
+            const textColor = '#1e293b';
+            const gridColor = 'rgba(0, 0, 0, 0.08)';
             Chart.defaults.color = textColor;
             Chart.defaults.borderColor = gridColor;
             chartColors.gridColor = gridColor;
